@@ -29,6 +29,15 @@ const relatedServices = servicesData
 
 const base = import.meta.env.BASE_URL;
 
+// Map of service slugs to local image assets (placed in public folder)
+const serviceImages: Record<string, string> = {
+  'visitor-visa': 'assets/images/services/visitor-visa.webp',
+  'study-abroad': 'assets/images/services/study-visa.jpg',
+  'business-visa': 'assets/images/services/business-visa.webp'
+};
+
+const serviceImage = serviceImages[service.slug];
+
 const breadcrumbs = [
   { name: 'Home', item: base },
   { name: 'Services', item: `${base}services/` },
@@ -62,19 +71,28 @@ const faqSchema = service.faqs && service.faqs.length > 0 ? service.faqs : undef
     <div class="service-layout-grid">
       <!-- Main Content -->
       <article class="service-main-content">
-        <!-- Visual Placeholder Image -->
-        <div class="media-placeholder">
-          <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="placeholder-svg">
-            <rect width="800" height="400" fill="url(#hero-grad)" />
-            <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Outfit" font-size="28" font-weight="700" fill="#ffffff">{service.title}</text>
-            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="16" fill="#9ca3af">Visual Concept Placeholder</text>
-            <defs>
-              <linearGradient id="hero-grad" x1="0" y1="0" x2="800" y2="400" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#1e3a8a" />
-                <stop offset="1" stop-color="#0f172a" />
-              </linearGradient>
-            </defs>
-          </svg>
+        <!-- Visual Service Image -->
+        <div class="media-placeholder" style="aspect-ratio: 2/1; overflow: hidden; border-radius: var(--border-radius-md); border: 1px solid rgba(255, 255, 255, 0.1);">
+          {serviceImage ? (
+            <img 
+              src={`${base}${serviceImage}`} 
+              alt={service.title} 
+              style="width: 100%; height: 100%; object-fit: cover; display: block;" 
+              loading="eager"
+            />
+          ) : (
+            <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="placeholder-svg" style="width: 100%; height: auto; display: block;">
+              <rect width="800" height="400" fill="url(#hero-grad)" />
+              <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Outfit" font-size="28" font-weight="700" fill="#ffffff">{service.title}</text>
+              <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="16" fill="#9ca3af">Visual Concept Placeholder</text>
+              <defs>
+                <linearGradient id="hero-grad" x1="0" y1="0" x2="800" y2="400" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#1e3a8a" />
+                  <stop offset="1" stop-color="#0f172a" />
+                </linearGradient>
+              </defs>
+            </svg>
+          )}
         </div>
 
         <div class="content-block">
