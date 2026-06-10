@@ -7,6 +7,7 @@ interface Props {
 }
 
 const { title, shortDescription, category, slug } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <article class="service-card card">
@@ -17,7 +18,7 @@ const { title, shortDescription, category, slug } = Astro.props;
     <h3 class="card-title">{title}</h3>
     <p class="card-desc">{shortDescription}</p>
   </div>
-  <a href={`/services/${slug}/`} class="card-link" aria-label={`Learn more about ${title}`}>
+  <a href={`${base}services/${slug}/`} class="card-link" aria-label={`Learn more about ${title}`}>
     Learn More <span class="arrow-right" aria-hidden="true">&rarr;</span>
   </a>
 </article>

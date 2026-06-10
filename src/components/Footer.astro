@@ -4,19 +4,21 @@ import servicesData from '../data/services.json';
 
 // Get a few popular services for the footer column
 const popularServices = servicesData.slice(0, 5);
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="site-footer">
   <div class="container footer-grid">
     <!-- Brand Info -->
     <div class="footer-col brand-col">
-      <img src="/assets/bbcimmigration_logo.png" alt="Busy Bee Canada Logo" class="logo-image" style="height: 45px; width: auto; object-fit: contain; margin-bottom: 0.5rem;" />
+      <img src={`${base}assets/bbcimmigration_logo.png`} alt="Busy Bee Canada Logo" class="logo-image" style="height: 45px; width: auto; object-fit: contain; margin-bottom: 0.5rem;" />
       <p class="brand-text">
         Busy Bee Canada Immigration is an ICCRC licensed immigration firm in Barrie, Ontario. Each case for us has been a personal journey. Our motto is “Let’s get it done” & we approach each case with individual nuance and a human touch.
       </p>
       
       <div class="licence-cert-container" style="margin-top: 0.5rem;">
-        <img src="/assets/Footer licence.jpg" alt="ICCRC / CICC Licensed Consultant Certification" class="licence-image" style="max-height: 80px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); display: block;" />
+        <img src={`${base}assets/Footer licence.jpg`} alt="ICCRC / CICC Licensed Consultant Certification" class="licence-image" style="max-height: 80px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); display: block;" />
       </div>
 
       <div class="social-icons">
@@ -35,10 +37,10 @@ const popularServices = servicesData.slice(0, 5);
       <ul class="footer-links">
         {popularServices.map(service => (
           <li>
-            <a href={`/services/${service.slug}/`}>{service.title}</a>
+            <a href={`${base}services/${service.slug}/`}>{service.title}</a>
           </li>
         ))}
-        <li><a href="/services/">All Services Hub &rarr;</a></li>
+        <li><a href={`${base}services/`}>All Services Hub &rarr;</a></li>
       </ul>
     </div>
 
@@ -58,11 +60,11 @@ const popularServices = servicesData.slice(0, 5);
     <div class="footer-col">
       <h3 class="footer-heading">Legal Info</h3>
       <ul class="footer-links">
-        <li><a href="/privacy-policy/">Privacy Policy</a></li>
-        <li><a href="/terms-and-conditions/">Terms & Conditions</a></li>
-        <li><a href="/disclaimer/">Disclaimer</a></li>
-        <li><a href="/cookie-policy/">Cookie Policy</a></li>
-        <li><a href="/accessibility/">Accessibility</a></li>
+        <li><a href={`${base}privacy-policy/`}>Privacy Policy</a></li>
+        <li><a href={`${base}terms-and-conditions/`}>Terms & Conditions</a></li>
+        <li><a href={`${base}disclaimer/`}>Disclaimer</a></li>
+        <li><a href={`${base}cookie-policy/`}>Cookie Policy</a></li>
+        <li><a href={`${base}accessibility/`}>Accessibility</a></li>
       </ul>
     </div>
   </div>

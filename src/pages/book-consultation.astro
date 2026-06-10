@@ -2,9 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../data/site';
 
+const base = import.meta.env.BASE_URL;
+
 const breadcrumbs = [
-  { name: 'Home', item: '/' },
-  { name: 'Book Consultation', item: '/book-consultation/' }
+  { name: 'Home', item: base },
+  { name: 'Book Consultation', item: `${base}book-consultation/` }
 ];
 ---
 
@@ -88,7 +90,7 @@ const breadcrumbs = [
             </a>
             
             <p class="alternative-text">
-              Prefer a callback? <a href="/contact-us/">Request a general evaluation call</a> and our intake team will phone you.
+              Prefer a callback? <a href={`${base}contact-us/`}>Request a general evaluation call</a> and our intake team will phone you.
             </p>
           </div>
         </div>

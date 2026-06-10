@@ -11,9 +11,11 @@ const groupedServices = categories.reduce((acc, category) => {
   return acc;
 }, {} as Record<string, typeof servicesData>);
 
+const base = import.meta.env.BASE_URL;
+
 const breadcrumbs = [
-  { name: 'Home', item: '/' },
-  { name: 'Services', item: '/services/' }
+  { name: 'Home', item: base },
+  { name: 'Services', item: `${base}services/` }
 ];
 ---
 

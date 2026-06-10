@@ -49,6 +49,8 @@ const testimonials = [
     service: "Study Permit Program"
   }
 ];
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout>
@@ -62,7 +64,7 @@ const testimonials = [
         <p class="hero-desc">Navigate the complex Canadian immigration system with confidence. Our licensed Regulated Canadian Immigration Consultants (RCIC) provide clear, professional representation for visas, work permits, sponsorships, and permanent residency.</p>
         <div class="hero-ctas">
           <a href="#featured-services" class="btn btn-primary">Explore Pathways</a>
-          <a href="/about-us/" class="btn btn-outline">Meet Our Consultants</a>
+          <a href={`${base}about-us/`} class="btn btn-outline">Meet Our Consultants</a>
         </div>
       </div>
       <!-- Hero Form -->
@@ -80,7 +82,7 @@ const testimonials = [
         <h2>Experienced Representation You Can Rely On</h2>
         <p>Busy Bee Canada Immigration is an ICCRC licensed immigration firm in Barrie, Ontario. Each case for us has been a personal journey. Our motto is “Let’s get it done” & we approach each case with individual nuance and a human touch.</p>
         <p>Our work matches all compliance directives issued by the College of Immigration and Citizenship Consultants (CICC). We do not guarantee outcomes—because only government officers make the final decision—but we guarantee diligent, meticulous, and expert preparation of your files.</p>
-        <a href="/about-us/" class="btn btn-outline">Read Our Philosophy</a>
+        <a href={`${base}about-us/`} class="btn btn-outline">Read Our Philosophy</a>
       </div>
       <div class="welcome-visual-placeholder card glass">
         <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +122,7 @@ const testimonials = [
         ))}
       </div>
       <div class="text-center view-all-box">
-        <a href="/services/" class="btn btn-outline">View All 19 Service Pathways &rarr;</a>
+        <a href={`${base}services/`} class="btn btn-outline">View All 19 Service Pathways &rarr;</a>
       </div>
     </div>
   </section>
@@ -151,7 +153,7 @@ const testimonials = [
       <div class="cta-card card text-center">
         <h3>Immigration Class Plans</h3>
         <p>Read about the difference between Economic, Business, and Family sponsorship categories.</p>
-        <a href="/immigration/" class="btn btn-outline">Immigration Overview</a>
+        <a href={`${base}immigration/`} class="btn btn-outline">Immigration Overview</a>
       </div>
       <div class="cta-card card text-center highlight-cta">
         <h3>Check Your Eligibility</h3>
@@ -161,7 +163,7 @@ const testimonials = [
       <div class="cta-card card text-center">
         <h3>Schedule Consultation</h3>
         <p>Reserve a video call session with an RCIC consultant for strategic, custom advice.</p>
-        <a href="/book-consultation/" class="btn btn-outline">Book Consultation</a>
+        <a href={`${base}book-consultation/`} class="btn btn-outline">Book Consultation</a>
       </div>
     </div>
   </section>
@@ -192,7 +194,7 @@ const testimonials = [
       <h2>Build Your Canadian Future Today</h2>
       <p>Consult with Regulated Canadian Immigration Consultants who put your needs first.</p>
       <div class="call-actions">
-        <a href="/book-consultation/" class="btn btn-accent">Book Paid Consultation</a>
+        <a href={`${base}book-consultation/`} class="btn btn-accent">Book Paid Consultation</a>
         <a href={`tel:${siteConfig.phone}`} class="btn btn-outline">📞 Call {siteConfig.phone}</a>
       </div>
     </div>

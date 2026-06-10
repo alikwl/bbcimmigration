@@ -25,9 +25,11 @@ const workPermits = servicesData.filter(s =>
   s.slug === 'bridging-open-work-permit'
 );
 
+const base = import.meta.env.BASE_URL;
+
 const breadcrumbs = [
-  { name: 'Home', item: '/' },
-  { name: 'Immigration Class', item: '/immigration/' }
+  { name: 'Home', item: base },
+  { name: 'Immigration Class', item: `${base}immigration/` }
 ];
 ---
 
@@ -57,7 +59,7 @@ const breadcrumbs = [
           <article class="class-card card">
             <h3>{service.title}</h3>
             <p>{service.shortDescription}</p>
-            <a href={`/services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
+            <a href={`${base}services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
           </article>
         ))}
       </div>
@@ -74,7 +76,7 @@ const breadcrumbs = [
           <article class="class-card card">
             <h3>{service.title}</h3>
             <p>{service.shortDescription}</p>
-            <a href={`/services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
+            <a href={`${base}services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
           </article>
         ))}
       </div>
@@ -91,7 +93,7 @@ const breadcrumbs = [
           <article class="class-card card">
             <h3>{service.title}</h3>
             <p>{service.shortDescription}</p>
-            <a href={`/services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
+            <a href={`${base}services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
           </article>
         ))}
       </div>
@@ -108,7 +110,7 @@ const breadcrumbs = [
           <article class="class-card card">
             <h3>{service.title}</h3>
             <p>{service.shortDescription}</p>
-            <a href={`/services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
+            <a href={`${base}services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
           </article>
         ))}
       </div>

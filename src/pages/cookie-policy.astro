@@ -2,9 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../data/site';
 
+const base = import.meta.env.BASE_URL;
+
 const breadcrumbs = [
-  { name: 'Home', item: '/' },
-  { name: 'Cookie Policy', item: '/cookie-policy/' }
+  { name: 'Home', item: base },
+  { name: 'Cookie Policy', item: `${base}cookie-policy/` }
 ];
 ---
 

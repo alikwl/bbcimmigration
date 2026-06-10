@@ -3,9 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import teamData from '../data/team.json';
 import { siteConfig } from '../data/site';
 
+const base = import.meta.env.BASE_URL;
+
 const breadcrumbs = [
-  { name: 'Home', item: '/' },
-  { name: 'About Us', item: '/about-us/' }
+  { name: 'Home', item: base },
+  { name: 'About Us', item: `${base}about-us/` }
 ];
 ---
 
@@ -97,7 +99,7 @@ const breadcrumbs = [
           <div class="team-avatar-container">
             {member.image ? (
               <img 
-                src={encodeURI(member.image)} 
+                src={`${base}${member.image.startsWith('/') ? member.image.slice(1) : member.image}`}
                 alt={member.name} 
                 class="team-avatar-img" 
                 loading="lazy"
@@ -132,8 +134,8 @@ const breadcrumbs = [
       <h2>Ready to Start Your Journey?</h2>
       <p>Have our credentialed team analyze your background and plan your migration path.</p>
       <div class="cta-buttons">
-        <a href="/book-consultation/" class="btn btn-accent">Book Paid Consultation</a>
-        <a href="/contact-us/" class="btn btn-outline">Send a Message</a>
+        <a href={`${base}book-consultation/`} class="btn btn-accent">Book Paid Consultation</a>
+        <a href={`${base}contact-us/`} class="btn btn-outline">Send a Message</a>
       </div>
     </div>
   </section>

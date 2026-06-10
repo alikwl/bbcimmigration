@@ -78,6 +78,7 @@ const faqPageSchema = faqSchema ? {
     }
   }))
 } : null;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!-- Canonical & Title -->
@@ -89,7 +90,7 @@ const faqPageSchema = faqSchema ? {
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="index, follow" />
 <meta charset="utf-8" />
-<link rel="icon" type="image/png" href="/assets/bbcimmigration_logo.png" />
+<link rel="icon" type="image/png" href={`${base}assets/bbcimmigration_logo.png`} />
 
 <!-- OpenGraph / Facebook -->
 <meta property="og:type" content={ogType} />
