@@ -56,7 +56,7 @@ const { items, title = "Frequently Asked Questions" } = Astro.props;
   }
 
   .faq-accordion-item {
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
     background-color: var(--bg-secondary);
     border-radius: var(--border-radius-md);
     overflow: hidden;
@@ -64,7 +64,7 @@ const { items, title = "Frequently Asked Questions" } = Astro.props;
   }
 
   .faq-accordion-item:hover {
-    border-color: rgba(59, 130, 246, 0.2);
+    border-color: #cbd5e1;
   }
 
   .faq-accordion-trigger {
@@ -76,7 +76,7 @@ const { items, title = "Frequently Asked Questions" } = Astro.props;
     background: none;
     border: none;
     text-align: left;
-    color: #ffffff;
+    color: var(--text-primary);
     font-family: var(--font-heading);
     font-size: 1.05rem;
     font-weight: 600;
@@ -87,7 +87,7 @@ const { items, title = "Frequently Asked Questions" } = Astro.props;
   .faq-icon {
     font-size: 1.5rem;
     line-height: 1;
-    color: var(--color-accent);
+    color: var(--color-primary);
     transition: transform var(--transition-normal);
   }
 
@@ -106,7 +106,7 @@ const { items, title = "Frequently Asked Questions" } = Astro.props;
 
   /* Active/Open class states */
   .faq-accordion-item.active {
-    border-color: rgba(59, 130, 246, 0.3);
+    border-color: var(--color-primary-light);
   }
 
   .faq-accordion-item.active .faq-icon {

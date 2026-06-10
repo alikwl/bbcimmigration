@@ -84,20 +84,13 @@ const base = import.meta.env.BASE_URL;
         <p>Our work matches all compliance directives issued by the College of Immigration and Citizenship Consultants (CICC). We do not guarantee outcomes—because only government officers make the final decision—but we guarantee diligent, meticulous, and expert preparation of your files.</p>
         <a href={`${base}about-us/`} class="btn btn-outline">Read Our Philosophy</a>
       </div>
-      <div class="welcome-visual-placeholder card glass">
+      <div class="welcome-visual-placeholder card">
         <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="400" height="300" fill="#1e2937" rx="8" />
-          <path d="M200 40 L360 200 H40 L200 40 Z" fill="url(#hero-grad-welcome)" opacity="0.1" />
-          <circle cx="200" cy="140" r="40" fill="#eab308" opacity="0.8" />
-          <path d="M185 140 L195 150 L215 130" stroke="#0f172a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-          <text x="50%" y="220" dominant-baseline="middle" text-anchor="middle" font-family="Outfit" font-size="18" font-weight="700" fill="#ffffff">CICC Regulated (L3 RCIC)</text>
-          <text x="50%" y="245" dominant-baseline="middle" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="12" fill="#9ca3af">Verify our credentials anytime</text>
-          <defs>
-            <linearGradient id="hero-grad-welcome" x1="200" y1="40" x2="200" y2="200" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#3b82f6" />
-              <stop offset="1" stop-color="#1e40af" />
-            </linearGradient>
-          </defs>
+          <rect width="400" height="300" fill="#f1f5f9" rx="8" />
+          <circle cx="200" cy="140" r="40" fill="#1e3a8a" opacity="0.8" />
+          <path d="M185 140 L195 150 L215 130" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="50%" y="220" dominant-baseline="middle" text-anchor="middle" font-family="Inter" font-size="18" font-weight="700" fill="#0f172a">CICC Regulated (L3 RCIC)</text>
+          <text x="50%" y="245" dominant-baseline="middle" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="12" fill="#64748b">Verify our credentials anytime</text>
         </svg>
       </div>
     </div>
@@ -177,7 +170,7 @@ const base = import.meta.env.BASE_URL;
     
     <div class="grid grid-3 testimonial-grid">
       {testimonials.map(item => (
-        <div class="testimonial-card card glass">
+        <div class="testimonial-card card">
           <p class="quote">“{item.quote}”</p>
           <div class="author-info">
             <span class="name">{item.author}</span>
@@ -204,9 +197,9 @@ const base = import.meta.env.BASE_URL;
 <style>
   /* Hero Section */
   .home-hero {
-    background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+    background-color: #eff6ff;
     padding: 6rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .hero-layout {
@@ -217,9 +210,9 @@ const base = import.meta.env.BASE_URL;
   }
 
   .trust-badge {
-    background-color: rgba(234, 179, 8, 0.1);
-    color: var(--color-accent);
-    border: 1px solid rgba(234, 179, 8, 0.2);
+    background-color: #eff6ff;
+    color: var(--color-primary);
+    border: 1px solid #dbeafe;
     font-size: 0.85rem;
     font-weight: 700;
     padding: 0.35rem 0.8rem;
@@ -289,8 +282,8 @@ const base = import.meta.env.BASE_URL;
   /* Services Grid Section */
   .services-section {
     background-color: var(--bg-secondary);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .section-subtitle {
@@ -359,8 +352,8 @@ const base = import.meta.env.BASE_URL;
   }
 
   .highlight-cta {
-    border-color: rgba(234, 179, 8, 0.3);
-    box-shadow: 0 4px 25px rgba(234, 179, 8, 0.08);
+    border-color: var(--color-primary-light);
+    box-shadow: var(--shadow-md);
   }
 
   /* Testimonials */
@@ -373,7 +366,7 @@ const base = import.meta.env.BASE_URL;
 
   .testimonial-card .quote {
     font-style: italic;
-    color: #ffffff;
+    color: var(--text-primary);
     font-size: 1.05rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -387,7 +380,7 @@ const base = import.meta.env.BASE_URL;
 
   .author-info .name {
     font-weight: 700;
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-size: 0.95rem;
   }
 
@@ -403,8 +396,8 @@ const base = import.meta.env.BASE_URL;
 
   .final-card {
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, #1e3a8a 0%, #0b0f19 100%);
-    border-color: rgba(255, 255, 255, 0.08);
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
   }
 
   .final-card h2 {

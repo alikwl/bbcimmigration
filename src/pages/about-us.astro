@@ -36,7 +36,7 @@ const breadcrumbs = [
           Our motto is <strong>“Let’s get it done”</strong> & with a philosophy as simple, we approach each case within its individual nuance and a human touch.
         </p>
       </div>
-      <div class="stats-card card glass">
+      <div class="stats-card card">
         <div class="stat-item">
           <span class="stat-number">0</span>
           <span class="stat-label">Cases Completed</span>
@@ -59,14 +59,14 @@ const breadcrumbs = [
       <div class="director-image-placeholder">
         <svg viewBox="0 0 400 450" fill="none" xmlns="http://www.w3.org/2000/svg" class="placeholder-svg">
           <rect width="400" height="450" fill="url(#dir-grad)" />
-          <path d="M200 150 C 240 150, 270 180, 270 220 C 270 260, 240 290, 200 290 C 160 290, 130 260, 130 220 C 130 180, 160 150, 200 150 Z" fill="#ffffff" opacity="0.1" />
-          <path d="M100 380 C 100 320, 150 300, 200 300 C 250 300, 300 320, 300 380 L 300 420 L 100 420 Z" fill="#ffffff" opacity="0.1" />
-          <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Outfit" font-size="20" font-weight="700" fill="#ffffff">Harsimran Kaur</text>
-          <text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="12" fill="#eab308">ICCRC/CICC Director</text>
+          <path d="M200 150 C 240 150, 270 180, 270 220 C 270 260, 240 290, 200 290 C 160 290, 130 260, 130 220 C 130 180, 160 150, 200 150 Z" fill="#0f172a" opacity="0.06" />
+          <path d="M100 380 C 100 320, 150 300, 200 300 C 250 300, 300 320, 300 380 L 300 420 L 100 420 Z" fill="#0f172a" opacity="0.06" />
+          <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Inter" font-size="20" font-weight="700" fill="#0f172a">Harsimran Kaur</text>
+          <text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="12" fill="#1e3a8a">ICCRC/CICC Director</text>
           <defs>
             <linearGradient id="dir-grad" x1="0" y1="0" x2="400" y2="450" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#1e40af" />
-              <stop offset="1" stop-color="#0b0f19" />
+              <stop stop-color="#eff6ff" />
+              <stop offset="1" stop-color="#dbeafe" />
             </linearGradient>
           </defs>
         </svg>
@@ -107,13 +107,13 @@ const breadcrumbs = [
             ) : (
               <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="100" cy="100" r="100" fill="url(#avatar-grad)" />
-                <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Outfit" font-size="48" font-weight="700" fill="#ffffff">
+                <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Inter" font-size="48" font-weight="700" fill="#ffffff">
                   {member.name.split(' ').map(n => n[0]).join('')}
                 </text>
                 <defs>
                   <linearGradient id="avatar-grad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3b82f6" />
-                    <stop offset="1" stop-color="#1e3a8a" />
+                    <stop stop-color="#e2e8f0" />
+                    <stop offset="1" stop-color="#cbd5e1" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -130,7 +130,7 @@ const breadcrumbs = [
 
   <!-- Final CTA -->
   <section class="about-cta-section container text-center">
-    <div class="cta-inner card glass">
+    <div class="cta-inner card">
       <h2>Ready to Start Your Journey?</h2>
       <p>Have our credentialed team analyze your background and plan your migration path.</p>
       <div class="cta-buttons">
@@ -143,9 +143,9 @@ const breadcrumbs = [
 
 <style>
   .about-hero {
-    background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
+    background-color: #eff6ff;
     padding: 5rem 0 3rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .subtitle {
@@ -176,8 +176,8 @@ const breadcrumbs = [
     flex-direction: column;
     gap: 2rem;
     padding: 3rem 2.5rem;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
   }
 
   .stat-item {
@@ -190,7 +190,7 @@ const breadcrumbs = [
     font-family: var(--font-heading);
     font-size: 3rem;
     font-weight: 800;
-    color: var(--color-accent);
+    color: var(--color-primary);
     line-height: 1;
     margin-bottom: 0.25rem;
   }
@@ -207,8 +207,8 @@ const breadcrumbs = [
   .director-section {
     background-color: var(--bg-secondary);
     padding: 6rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .director-grid {
@@ -221,7 +221,7 @@ const breadcrumbs = [
   .director-image-placeholder {
     border-radius: var(--border-radius-md);
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color);
   }
 
   .director-text {
@@ -232,7 +232,7 @@ const breadcrumbs = [
     font-family: var(--font-heading);
     font-size: 8rem;
     line-height: 1;
-    color: rgba(255, 255, 255, 0.03);
+    color: rgba(0, 0, 0, 0.04);
     position: absolute;
     top: -4rem;
     left: -2rem;
@@ -271,7 +271,7 @@ const breadcrumbs = [
     margin: 0 auto 1.5rem auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--border-color);
   }
 
   .team-avatar-img {
@@ -291,7 +291,7 @@ const breadcrumbs = [
   .member-cred {
     display: block;
     font-size: 0.8rem;
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;

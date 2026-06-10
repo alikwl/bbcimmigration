@@ -14,10 +14,11 @@ const categories = {
 const base = import.meta.env.BASE_URL;
 ---
 
-<header class="site-header glass">
+<header class="site-header">
   <div class="container header-container">
     <a href={base} class="logo-area" aria-label={`${siteConfig.name} Home`}>
       <img src={`${base}assets/bbcimmigration_logo.png`} alt="Busy Bee Canada Logo" class="logo-image" style="height: 45px; width: auto; object-fit: contain; display: block;" />
+      <span class="logo-text">BBC Immigration</span>
     </a>
 
     <!-- Desktop Nav -->
@@ -112,7 +113,9 @@ const base = import.meta.env.BASE_URL;
     height: 80px;
     display: flex;
     align-items: center;
-    transition: background 0.3s;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s, box-shadow 0.3s;
   }
   
   .header-container {
@@ -125,6 +128,16 @@ const base = import.meta.env.BASE_URL;
   .logo-area {
     display: flex;
     align-items: center;
+    text-decoration: none;
+  }
+
+  .logo-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #E02B29; /* User specified red matching the logo */
+    margin-left: 0.5rem;
+    display: none;
   }
 
   .logo-svg {
@@ -149,14 +162,14 @@ const base = import.meta.env.BASE_URL;
     font-weight: 500;
     font-size: 1rem;
     padding: 0.5rem 0;
-    color: #ffffff;
+    color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: 0.25rem;
   }
 
   .nav-link:hover {
-    color: var(--color-accent);
+    color: var(--color-primary-light);
   }
 
   .arrow {
@@ -188,10 +201,8 @@ const base = import.meta.env.BASE_URL;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     width: 900px;
-    background: rgba(15, 23, 42, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: #ffffff;
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow-xl);
     border-radius: var(--border-radius-md);
     padding: 2rem;
@@ -211,9 +222,9 @@ const base = import.meta.env.BASE_URL;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--color-accent);
+    color: var(--color-primary);
     margin-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.25rem;
   }
 
@@ -232,7 +243,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .megamenu-item:hover {
-    color: #ffffff;
+    color: var(--color-primary);
     transform: translateX(3px);
   }
 
@@ -254,7 +265,7 @@ const base = import.meta.env.BASE_URL;
   .hamburger-line {
     width: 25px;
     height: 2px;
-    background-color: #ffffff;
+    background-color: var(--text-primary);
     transition: all 0.3s ease;
   }
 
@@ -276,8 +287,7 @@ const base = import.meta.env.BASE_URL;
     left: 0;
     width: 100%;
     height: calc(100vh - 80px);
-    background-color: rgba(11, 15, 25, 0.98);
-    backdrop-filter: blur(20px);
+    background-color: #ffffff;
     z-index: 999;
     opacity: 0;
     visibility: hidden;
@@ -307,7 +317,7 @@ const base = import.meta.env.BASE_URL;
     font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-primary);
     display: block;
   }
 
@@ -315,7 +325,7 @@ const base = import.meta.env.BASE_URL;
     font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-primary);
     background: none;
     border: none;
     display: flex;
@@ -334,7 +344,7 @@ const base = import.meta.env.BASE_URL;
     display: none;
     flex-direction: column;
     gap: 0.75rem;
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: 2px solid var(--border-color);
   }
 
   .mobile-submenu.open {
@@ -348,7 +358,7 @@ const base = import.meta.env.BASE_URL;
   }
   
   .mobile-submenu-link.highlight {
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-weight: 600;
   }
 
@@ -382,6 +392,9 @@ const base = import.meta.env.BASE_URL;
   @media (max-width: 768px) {
     .desktop-nav, .consult-btn {
       display: none;
+    }
+    .logo-text {
+      display: block;
     }
     .site-header {
       height: 70px;
@@ -430,11 +443,9 @@ const base = import.meta.env.BASE_URL;
   const header = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      header?.classList.add('glass-scrolled');
-      header.style.backgroundColor = 'rgba(11, 15, 25, 0.92)';
+      header.style.backgroundColor = '#ffffff';
       header.style.boxShadow = 'var(--shadow-md)';
     } else {
-      header?.classList.remove('glass-scrolled');
       header.style.backgroundColor = '';
       header.style.boxShadow = '';
     }

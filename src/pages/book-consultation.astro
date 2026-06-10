@@ -64,7 +64,7 @@ const breadcrumbs = [
 
       <!-- Action Widget -->
       <div class="booking-widget-panel">
-        <div class="widget-card card glass">
+        <div class="widget-card card">
           <h2>Select Session Mode</h2>
           <p class="widget-desc">Choose your preferred consultation option to view available slots.</p>
           
@@ -101,9 +101,9 @@ const breadcrumbs = [
 
 <style>
   .booking-hero {
-    background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
+    background-color: #eff6ff;
     padding: 5rem 0 3rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .subtitle {
@@ -137,14 +137,14 @@ const breadcrumbs = [
   }
 
   .package-card {
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
     background-color: var(--bg-secondary);
     transition: transform var(--transition-normal), border-color var(--transition-normal);
   }
 
   .package-card.active-package {
-    border-color: rgba(59, 130, 246, 0.4);
-    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+    border-color: var(--color-primary-light);
+    box-shadow: var(--shadow-md);
   }
 
   .pack-meta {
@@ -158,12 +158,12 @@ const breadcrumbs = [
     font-size: 1.6rem;
     font-family: var(--font-heading);
     font-weight: 800;
-    color: var(--color-accent);
+    color: var(--color-primary);
   }
 
   .duration {
     font-size: 0.85rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-tertiary);
     padding: 0.25rem 0.75rem;
     border-radius: var(--border-radius-sm);
     color: var(--text-primary);
@@ -201,7 +201,7 @@ const breadcrumbs = [
   /* Widget Panel */
   .widget-card {
     padding: 2.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color);
   }
 
   .widget-desc {
@@ -222,9 +222,9 @@ const breadcrumbs = [
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 0.95rem;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
     border-radius: var(--border-radius-md);
     cursor: pointer;
     text-align: left;
@@ -232,18 +232,18 @@ const breadcrumbs = [
   }
 
   .mode-btn:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: #ffffff;
+    background: var(--bg-secondary);
+    border-color: var(--color-primary);
   }
 
   .mode-btn.active {
-    background: rgba(59, 130, 246, 0.1);
+    background: #eff6ff;
     border-color: var(--color-primary-light);
     color: var(--color-primary-light);
   }
 
   .booking-cta-block {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--border-color);
     padding-top: 2rem;
   }
 
@@ -268,7 +268,7 @@ const breadcrumbs = [
   }
 
   .alternative-text a {
-    color: var(--color-accent);
+    color: var(--color-primary-light);
     text-decoration: underline;
   }
 

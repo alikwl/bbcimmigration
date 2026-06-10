@@ -72,15 +72,15 @@ const breadcrumbs = [
           <h3>Interactive Map</h3>
           <div class="map-visual">
             <svg viewBox="0 0 500 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="500" height="250" fill="#1e2937" rx="8" />
+              <rect width="500" height="250" fill="#f1f5f9" rx="8" />
               <!-- Map lines -->
-              <path d="M50 0 L50 250 M150 0 L150 250 M300 0 L300 250 M450 0 L450 250" stroke="#374151" stroke-width="2" />
-              <path d="M0 50 L500 50 M0 120 L500 120 M0 200 L500 200" stroke="#374151" stroke-width="2" />
+              <path d="M50 0 L50 250 M150 0 L150 250 M300 0 L300 250 M450 0 L450 250" stroke="#e2e8f0" stroke-width="2" />
+              <path d="M0 50 L500 50 M0 120 L500 120 M0 200 L500 200" stroke="#e2e8f0" stroke-width="2" />
               <!-- Highlighting office -->
               <circle cx="300" cy="120" r="12" fill="rgba(59, 130, 246, 0.3)" />
-              <circle cx="300" cy="120" r="6" fill="#eab308" />
-              <text x="320" y="125" font-family="Outfit" font-size="14" font-weight="700" fill="#ffffff">BBC Office</text>
-              <text x="320" y="142" font-family="Plus Jakarta Sans" font-size="10" fill="#9ca3af">Suite #220E, Barrie</text>
+              <circle cx="300" cy="120" r="6" fill="#1e3a8a" />
+              <text x="320" y="125" font-family="Inter" font-size="14" font-weight="700" fill="#0f172a">BBC Office</text>
+              <text x="320" y="142" font-family="Plus Jakarta Sans" font-size="10" fill="#64748b">Suite #220E, Barrie</text>
             </svg>
           </div>
         </div>
@@ -100,9 +100,9 @@ const breadcrumbs = [
 
 <style>
   .contact-hero {
-    background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
+    background-color: #eff6ff;
     padding: 5rem 0 3rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .subtitle {
@@ -150,7 +150,7 @@ const breadcrumbs = [
 
   .detail-text h3 {
     font-size: 1rem;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 0.25rem;
   }
 
@@ -164,7 +164,7 @@ const breadcrumbs = [
     color: inherit;
   }
   .detail-text a:hover {
-    color: #ffffff;
+    color: var(--color-primary);
   }
 
   .map-placeholder-box h3 {

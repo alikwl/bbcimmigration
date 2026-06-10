@@ -72,7 +72,7 @@ const faqSchema = service.faqs && service.faqs.length > 0 ? service.faqs : undef
       <!-- Main Content -->
       <article class="service-main-content">
         <!-- Visual Service Image -->
-        <div class="media-placeholder" style="aspect-ratio: 2/1; overflow: hidden; border-radius: var(--border-radius-md); border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div class="media-placeholder" style="aspect-ratio: 2/1; overflow: hidden; border-radius: var(--border-radius-md); border: 1px solid #e2e8f0;">
           {serviceImage ? (
             <img 
               src={`${base}${serviceImage}`} 
@@ -83,12 +83,12 @@ const faqSchema = service.faqs && service.faqs.length > 0 ? service.faqs : undef
           ) : (
             <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="placeholder-svg" style="width: 100%; height: auto; display: block;">
               <rect width="800" height="400" fill="url(#hero-grad)" />
-              <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Outfit" font-size="28" font-weight="700" fill="#ffffff">{service.title}</text>
-              <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="16" fill="#9ca3af">Visual Concept Placeholder</text>
+              <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Inter" font-size="28" font-weight="700" fill="#0f172a">{service.title}</text>
+              <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="16" fill="#64748b">Visual Concept Placeholder</text>
               <defs>
                 <linearGradient id="hero-grad" x1="0" y1="0" x2="800" y2="400" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#1e3a8a" />
-                  <stop offset="1" stop-color="#0f172a" />
+                  <stop stop-color="#eff6ff" />
+                  <stop offset="1" stop-color="#dbeafe" />
                 </linearGradient>
               </defs>
             </svg>
@@ -178,14 +178,14 @@ const faqSchema = service.faqs && service.faqs.length > 0 ? service.faqs : undef
 
 <style>
   .service-hero {
-    background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+    background-color: #eff6ff;
     padding: 4rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: 3rem;
   }
 
   .category-tag {
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-weight: 700;
     font-size: 0.85rem;
     text-transform: uppercase;
@@ -217,7 +217,7 @@ const faqSchema = service.faqs && service.faqs.length > 0 ? service.faqs : undef
     margin-bottom: 2.5rem;
     border-radius: var(--border-radius-md);
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
   }
 
   .placeholder-svg {
@@ -269,7 +269,7 @@ const faqSchema = service.faqs && service.faqs.length > 0 ? service.faqs : undef
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    border-left: 2px solid var(--border-color);
     padding-left: 1.5rem;
     margin-left: 0.5rem;
   }
@@ -291,12 +291,12 @@ const faqSchema = service.faqs && service.faqs.length > 0 ? service.faqs : undef
   }
 
   .faq-block {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--border-color);
     padding-top: 2rem;
   }
 
   .disclaimer-box {
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--bg-secondary);
     border-left: 4px solid var(--text-muted);
     padding: 1.5rem;
     border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
@@ -339,11 +339,11 @@ const faqSchema = service.faqs && service.faqs.length > 0 ? service.faqs : undef
     color: var(--text-secondary);
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .related-link:hover {
-    color: #ffffff;
+    color: var(--color-primary);
   }
 
   .related-link:hover .arrow {

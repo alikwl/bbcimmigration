@@ -79,9 +79,9 @@ const breadcrumbs = [
 
 <style>
   .services-hub-hero {
-    background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
+    background-color: #eff6ff;
     padding: 5rem 0 3rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-color);
   }
 
   .subtitle {
@@ -119,8 +119,8 @@ const breadcrumbs = [
   }
 
   .anchor-link {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-family: var(--font-heading);
     font-weight: 600;
@@ -135,7 +135,7 @@ const breadcrumbs = [
     color: #ffffff;
     background: var(--color-primary-light);
     border-color: var(--color-primary-light);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+    box-shadow: var(--shadow-md);
   }
 
   .services-grouped-sections {
@@ -155,7 +155,7 @@ const breadcrumbs = [
   }
 
   .category-badge {
-    color: var(--color-accent);
+    color: var(--color-primary);
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;
