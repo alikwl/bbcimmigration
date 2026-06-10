@@ -1,0 +1,42 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/dist
+
+# astro db
+/db
+
+# build / environment
+.env
+.env.production
+.env.development
+.env.local
+.env.*.local
+.DS_Store
+Thumbs.db
+
+# astro build output
+.astro/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.cproject
+.settings/
+*.launch
+.vscode/
+*.sublime-workspace
+
+# local files
+scratch/
+QA_REPORT.md

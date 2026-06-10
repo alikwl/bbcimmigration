@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  faqSchema?: { question: string; answer: string }[];
+  breadcrumbs?: { name: string; item: string }[];
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  ogImage,
+  ogType = 'website',
+  faqSchema,
+  breadcrumbs
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <SEO 
+    title={title}
+    description={description}
+    canonicalUrl={canonicalUrl}
+    ogImage={ogImage}
+    ogType={ogType}
+    faqSchema={faqSchema}
+    breadcrumbs={breadcrumbs}
+  />
+</head>
+<body>
+  <!-- Accessibility skip link -->
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <!-- Header -->
+  <Header />
+
+  <!-- Main Content wrapper -->
+  <main id="main-content" style="padding-top: 80px; min-height: 80vh;">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <Footer />
+</body>
+</html>

@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Terms and Conditions', item: '/terms-and-conditions/' }
+];
+---
+
+<BaseLayout 
+  title="Terms & Conditions" 
+  description="Terms and conditions for utilizing the Busy Bee Canada website and information."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="legal-hero">
+    <div class="container text-center">
+      <h1>Terms & Conditions</h1>
+      <p class="subtitle">Effective Date: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+    </div>
+  </section>
+
+  <section class="legal-content container section-padding">
+    <div class="legal-text-wrapper card">
+      <h2>1. Agreement to Terms</h2>
+      <p>These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Busy Bee Canada ("we," "our," or "us"), concerning your access to and use of this website.</p>
+      
+      <h2>2. Intellectual Property Rights</h2>
+      <p>Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the "Content") and the trademarks, service marks, and logos contained therein (the "Marks") are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws.</p>
+
+      <h2>3. User Representations</h2>
+      <p>By using the Site, you represent and warrant that:</p>
+      <ul>
+        <li>All registration and submission information you submit will be true, accurate, current, and complete.</li>
+        <li>You will maintain the accuracy of such information and promptly update such information as necessary.</li>
+        <li>You have the legal capacity and you agree to comply with these Terms of Use.</li>
+      </ul>
+
+      <h2>4. Prohibited Activities</h2>
+      <p>You may not access or use the Site for any purpose other than that for which we make the Site available. The Site may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.</p>
+
+      <h2>5. Limitation of Liability</h2>
+      <p>In no event will we or our directors, employees, or agents be liable to you or any third party for any direct, indirect, consequential, exemplary, incidental, special, or punitive damages, including lost profit, lost revenue, loss of data, or other damages arising from your use of the site, even if we have been advised of the possibility of such damages.</p>
+
+      <h2>6. Governing Law</h2>
+      <p>These Terms of Use and your use of the Site are governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to its conflict of law principles.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-hero {
+    background: linear-gradient(135deg, #0b0f19 0%, #1f2937 100%);
+    padding: 4rem 0 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .subtitle {
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  .legal-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .legal-text-wrapper {
+    padding: 3rem;
+  }
+
+  .legal-text-wrapper h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.5rem;
+  }
+
+  .legal-text-wrapper h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .legal-text-wrapper p {
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .legal-text-wrapper ul {
+    list-style: square;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+  }
+
+  .legal-text-wrapper li {
+    margin-bottom: 0.5rem;
+  }
+</style>

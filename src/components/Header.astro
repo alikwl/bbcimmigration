@@ -1,0 +1,440 @@
+---
+import { siteConfig } from '../data/site';
+import servicesData from '../data/services.json';
+
+// Group services for dropdown categorizations
+const categories = {
+  "Visa": servicesData.filter(s => s.category === "Visa"),
+  "Immigration": servicesData.filter(s => s.category === "Immigration"),
+  "Work Permit": servicesData.filter(s => s.category === "Work Permit"),
+  "Programs": servicesData.filter(s => s.category === "Programs"),
+  "Additional": servicesData.filter(s => s.category === "Additional")
+};
+---
+
+<header class="site-header glass">
+  <div class="container header-container">
+    <a href="/" class="logo-area" aria-label={`${siteConfig.name} Home`}>
+      <img src="/assets/bbcimmigration_logo.png" alt="Busy Bee Canada Logo" class="logo-image" style="height: 45px; width: auto; object-fit: contain; display: block;" />
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav" aria-label="Main Navigation">
+      <ul class="nav-list">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li class="dropdown-trigger">
+          <a href="/services/" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Services <span class="arrow" aria-hidden="true">▼</span>
+          </a>
+          <div class="megamenu">
+            <div class="megamenu-grid">
+              {Object.entries(categories).map(([catName, services]) => (
+                <div class="megamenu-column">
+                  <h4 class="megamenu-heading">{catName}</h4>
+                  <ul class="megamenu-list">
+                    {services.map(service => (
+                      <li>
+                        <a href={`/services/${service.slug}/`} class="megamenu-item">
+                          {service.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </li>
+        <li><a href="/immigration/" class="nav-link">Immigration Class</a></li>
+        <li><a href="/about-us/" class="nav-link">About Us</a></li>
+        <li><a href="/contact-us/" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <a href={`tel:${siteConfig.phone}`} class="btn btn-outline call-btn" aria-label={`Call us at ${siteConfig.phone}`}>
+        📞 {siteConfig.phone}
+      </a>
+      <a href="/book-consultation/" class="btn btn-accent consult-btn">
+        Book Consultation
+      </a>
+      <!-- Hamburger Toggle -->
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-nav-list">
+        <li><a href="/" class="mobile-nav-link">Home</a></li>
+        <li>
+          <button class="mobile-dropdown-btn" aria-expanded="false">
+            Services <span class="arrow">▼</span>
+          </button>
+          <ul class="mobile-submenu" aria-hidden="true">
+            <li><a href="/services/" class="mobile-submenu-link highlight">All Services Hub</a></li>
+            {servicesData.map(service => (
+              <li>
+                <a href={`/services/${service.slug}/`} class="mobile-submenu-link">
+                  {service.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+        <li><a href="/immigration/" class="mobile-nav-link">Immigration Class</a></li>
+        <li><a href="/about-us/" class="mobile-nav-link">About Us</a></li>
+        <li><a href="/contact-us/" class="mobile-nav-link">Contact</a></li>
+        <li class="mobile-actions">
+          <a href="/book-consultation/" class="btn btn-accent btn-block">Book Consultation</a>
+          <a href={`tel:${siteConfig.phone}`} class="btn btn-outline btn-block">📞 Call Now</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-svg {
+    height: 50px;
+    width: auto;
+  }
+
+  /* Desktop Nav styles */
+  .desktop-nav {
+    display: block;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent);
+  }
+
+  .arrow {
+    font-size: 0.65rem;
+    transition: transform 0.2s;
+  }
+
+  /* Dropdown Megamenu */
+  .dropdown-trigger {
+    position: relative;
+  }
+
+  .dropdown-trigger:hover .megamenu,
+  .dropdown-trigger:focus-within .megamenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-trigger:hover .arrow,
+  .dropdown-trigger:focus-within .arrow {
+    transform: rotate(180deg);
+  }
+
+
+  .megamenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 900px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-xl);
+    border-radius: var(--border-radius-md);
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    z-index: 100;
+  }
+
+  .megamenu-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+  }
+
+  .megamenu-heading {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.25rem;
+  }
+
+  .megamenu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .megamenu-item {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: block;
+    line-height: 1.3;
+  }
+
+  .megamenu-item:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Hamburger lines */
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 4px;
+    z-index: 1100;
+  }
+
+  .hamburger-line {
+    width: 25px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  /* Hamburger Open State */
+  .mobile-menu-toggle.open .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .mobile-menu-toggle.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-menu-toggle.open .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Mobile menu drawer */
+  .mobile-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: rgba(11, 15, 25, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobile-menu-inner {
+    padding: 2rem 1.5rem;
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .mobile-nav-link {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    display: block;
+  }
+
+  .mobile-dropdown-btn {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .mobile-submenu {
+    list-style: none;
+    padding-left: 1rem;
+    margin-top: 0.75rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-submenu.open {
+    display: flex;
+  }
+
+  .mobile-submenu-link {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    display: block;
+  }
+  
+  .mobile-submenu-link.highlight {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .btn-block {
+    width: 100%;
+  }
+
+  /* Responsiveness */
+  @media (max-width: 1200px) {
+    .megamenu {
+      width: 700px;
+    }
+    .megamenu-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 992px) {
+    .call-btn {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .desktop-nav, .consult-btn {
+      display: none;
+    }
+    .site-header {
+      height: 70px;
+    }
+    .mobile-menu {
+      top: 70px;
+      height: calc(100vh - 70px);
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle logic
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+      menuToggle.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      mobileMenu.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
+      document.body.style.overflow = isExpanded ? '' : 'hidden';
+    });
+  }
+
+  // Mobile submenu dropdown logic
+  const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+  dropdownBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+      const arrow = btn.querySelector('.arrow');
+      if (arrow) arrow.style.transform = isExpanded ? '' : 'rotate(180deg)';
+      
+      const submenu = btn.nextElementSibling;
+      if (submenu) {
+        submenu.classList.toggle('open');
+        submenu.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
+      }
+    });
+  });
+
+  // Sticky header background shift on scroll
+  const header = document.querySelector('.site-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header?.classList.add('glass-scrolled');
+      header.style.backgroundColor = 'rgba(11, 15, 25, 0.92)';
+      header.style.boxShadow = 'var(--shadow-md)';
+    } else {
+      header?.classList.remove('glass-scrolled');
+      header.style.backgroundColor = '';
+      header.style.boxShadow = '';
+    }
+  });
+</script>

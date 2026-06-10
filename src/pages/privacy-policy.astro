@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Privacy Policy', item: '/privacy-policy/' }
+];
+---
+
+<BaseLayout 
+  title="Privacy Policy" 
+  description="Learn how Busy Bee Canada collects, uses, and protects your personal data."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="legal-hero">
+    <div class="container text-center">
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Effective Date: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+    </div>
+  </section>
+
+  <section class="legal-content container section-padding">
+    <div class="legal-text-wrapper card">
+      <h2>1. Introduction</h2>
+      <p>Busy Bee Canada ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, including any other media form, media channel, or mobile website related or connected thereto.</p>
+      
+      <h2>2. Collection of Information</h2>
+      <p>We may collect information about you in a variety of ways. The information we may collect on the website includes:</p>
+      <ul>
+        <li><strong>Personal Data:</strong> Personally identifiable information, such as your name, email address, phone/WhatsApp number, country of residence, and current immigration status, which you voluntarily give to us when you complete our evaluation or contact forms.</li>
+        <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the website, such as your IP address, browser type, operating system, access times, and the pages you have viewed directly before and after accessing the website.</li>
+      </ul>
+
+      <h2>3. Use of Your Information</h2>
+      <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the website to:</p>
+      <ul>
+        <li>Compile anonymous statistical data and analysis for use internally or with third parties.</li>
+        <li>Deliver targeted newsletters, marketing materials, and other information regarding services or new opportunities to you.</li>
+        <li>Respond to your direct inquiries and evaluate your eligibility for Canadian immigration streams.</li>
+      </ul>
+
+      <h2>4. Disclosure of Your Information</h2>
+      <p>We do not share, sell, or trade your personal information with third parties. We may share information with government bodies (such as IRCC) only when explicitly authorized by you within a signed retainer agreement.</p>
+
+      <h2>5. Security of Your Information</h2>
+      <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.</p>
+
+      <h2>6. Contact Us</h2>
+      <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
+      <address>
+        <p><strong>{siteConfig.name}</strong></p>
+        <p>Email: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
+        <p>Address: {siteConfig.address}</p>
+      </address>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-hero {
+    background: linear-gradient(135deg, #0b0f19 0%, #1f2937 100%);
+    padding: 4rem 0 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .subtitle {
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  .legal-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .legal-text-wrapper {
+    padding: 3rem;
+  }
+
+  .legal-text-wrapper h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.5rem;
+  }
+
+  .legal-text-wrapper h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .legal-text-wrapper p {
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .legal-text-wrapper ul {
+    list-style: square;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+  }
+
+  .legal-text-wrapper li {
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-text-wrapper address {
+    font-style: normal;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1rem;
+    color: var(--text-secondary);
+  }
+  
+  .legal-text-wrapper address a {
+    color: var(--color-accent);
+  }
+</style>

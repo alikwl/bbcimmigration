@@ -1,0 +1,448 @@
+---
+import servicesData from '../data/services.json';
+
+interface Props {
+  formId?: string;
+  submitUrl?: string; // Formspree, Basin, n8n webhook URL
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  formId = "leadForm",
+  submitUrl = "", // Empty triggers simulated submission
+  title = "Check Your Eligibility",
+  subtitle = "Complete this evaluation form to see if you qualify for Canadian immigration."
+} = Astro.props;
+---
+
+<div class="lead-form-wrapper glass animate-fade-in" id={`${formId}-container`}>
+  <div id={`${formId}-form-state`}>
+    {title && <h3 class="form-title">{title}</h3>}
+    {subtitle && <p class="form-subtitle">{subtitle}</p>}
+
+    <form id={formId} action={submitUrl} method="POST" class="eligibility-form" novalidate>
+      <!-- Hidden Fields for Tracking -->
+      <input type="hidden" name="source_page" value={Astro.url.pathname} />
+      <input type="hidden" name="submitted_at" id={`${formId}-timestamp`} />
+      
+      <!-- UTM Parameter Captures -->
+      <input type="hidden" name="utm_source" id={`${formId}-utm-source`} value="" />
+      <input type="hidden" name="utm_medium" id={`${formId}-utm-medium`} value="" />
+      <input type="hidden" name="utm_campaign" id={`${formId}-utm-campaign`} value="" />
+      <input type="hidden" name="utm_term" id={`${formId}-utm-term`} value="" />
+      <input type="hidden" name="utm_content" id={`${formId}-utm-content`} value="" />
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for={`${formId}-name`}>Full Name *</label>
+          <input type="text" id={`${formId}-name`} name="name" class="form-control" placeholder="John Doe" required />
+          <span class="error-msg" id={`${formId}-name-error`}>Full name is required.</span>
+        </div>
+        <div class="form-group">
+          <label for={`${formId}-email`}>Email Address *</label>
+          <input type="email" id={`${formId}-email`} name="email" class="form-control" placeholder="john@example.com" required />
+          <span class="error-msg" id={`${formId}-email-error`}>Enter a valid email address.</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for={`${formId}-phone`}>Phone / WhatsApp *</label>
+          <input type="tel" id={`${formId}-phone`} name="phone" class="form-control" placeholder="+1 (555) 000-0000" required />
+          <span class="error-msg" id={`${formId}-phone-error`}>Phone number is required.</span>
+        </div>
+        <div class="form-group">
+          <label for={`${formId}-residence`}>Country of Residence *</label>
+          <input type="text" id={`${formId}-residence`} name="country_of_residence" class="form-control" placeholder="India, UAE, Canada, etc." required />
+          <span class="error-msg" id={`${formId}-residence-error`}>Country of residence is required.</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for={`${formId}-status`}>Current Immigration Status *</label>
+          <select id={`${formId}-status`} name="current_status" class="form-control" required>
+            <option value="" disabled selected>Select status...</option>
+            <option value="Citizen/PR">Canadian Citizen / Permanent Resident</option>
+            <option value="Work Permit">Work Permit Holder in Canada</option>
+            <option value="Student Permit">Study Permit Holder in Canada</option>
+            <option value="Visitor">Visitor in Canada</option>
+            <option value="Out of Status">Out of Status / Other in Canada</option>
+            <option value="Outside Canada">Outside Canada (No active visa)</option>
+          </select>
+          <span class="error-msg" id={`${formId}-status-error`}>Please select your current status.</span>
+        </div>
+        <div class="form-group">
+          <label for={`${formId}-service`}>Desired Immigration Pathway *</label>
+          <select id={`${formId}-service`} name="desired_service" class="form-control" required>
+            <option value="" disabled selected>Select a service...</option>
+            <option value="Express Entry">Express Entry</option>
+            <option value="Provincial Nominee">Provincial Nominee Program (PNP)</option>
+            <option value="Work Permit">LMIA & Work Permits</option>
+            <option value="Student Visa">Student Visa / Study Permit</option>
+            <option value="Sponsorship">Spousal / Family Sponsorship</option>
+            <option value="Business Immigration">Business / Investor Pathways</option>
+            <option value="PR Renewal">PR Card Renewal</option>
+            <option value="Citizenship">Citizenship Application</option>
+            <option value="Other">Others / Not Sure</option>
+          </select>
+          <span class="error-msg" id={`${formId}-service-error`}>Please select your desired service.</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for={`${formId}-message`}>Provide Brief Details of Your Profile</label>
+        <textarea id={`${formId}-message`} name="message" class="form-control" rows="4" placeholder="Briefly describe your education, work experience, language test scores, etc."></textarea>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id={`${formId}-consent`} name="consent_agreed" required />
+        <label for={`${formId}-consent`}>
+          By checking this box, you agree that Busy Bee Canada may collect your data and contact you via email or phone regarding your application. *
+        </label>
+        <span class="error-msg block-error" id={`${formId}-consent-error`}>You must agree to the data consent.</span>
+      </div>
+
+      {submitUrl === "" && (
+        <div class="form-alert-warning" id={`${formId}-warning`}>
+          ⚠️ <strong>Simulation Mode:</strong> No `submitUrl` provided. Form will simulate submission and show a success message below.
+        </div>
+      )}
+
+      <button type="submit" class="btn btn-accent btn-submit">Submit Assessment</button>
+    </form>
+  </div>
+
+  <!-- Success Message State (Hidden initially) -->
+  <div id={`${formId}-success-state`} class="form-message-state success-state" style="display: none;">
+    <div class="message-icon">✓</div>
+    <h3>Assessment Submitted Successfully</h3>
+    <p>Thank you for submitting your details. Our licensed consultation team will audit your profile and reach out within 1 business day.</p>
+    <button class="btn btn-outline reset-form-btn" id={`${formId}-reset-btn`}>Submit Another Request</button>
+  </div>
+
+  <!-- Error Message State (Hidden initially) -->
+  <div id={`${formId}-error-state`} class="form-message-state error-state" style="display: none;">
+    <div class="message-icon">✗</div>
+    <h3>Submission Failed</h3>
+    <p>There was a technical issue transmitting your request. Please try again or contact us directly at <a href="mailto:info@bbcimmigration.com">info@bbcimmigration.com</a>.</p>
+    <button class="btn btn-primary retry-form-btn" id={`${formId}-retry-btn`}>Try Again</button>
+  </div>
+</div>
+
+<style>
+  .lead-form-wrapper {
+    padding: 2.5rem;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    position: relative;
+    transition: all var(--transition-normal);
+  }
+
+  .form-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    color: #ffffff;
+  }
+
+  .form-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .eligibility-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  .form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .error-msg {
+    color: #f87171;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: none;
+  }
+
+  .block-error {
+    display: none;
+    margin-top: 0.5rem;
+  }
+
+  /* Form control overrides for error states */
+  .form-control.invalid {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+  }
+
+  .form-control.invalid + .error-msg {
+    display: block;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    margin-top: 0.25rem;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-accent);
+    cursor: pointer;
+  }
+
+  .checkbox-group label {
+    flex: 1;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    cursor: pointer;
+  }
+
+  .form-alert-warning {
+    background: rgba(234, 179, 8, 0.1);
+    color: #fef08a;
+    border: 1px solid rgba(234, 179, 8, 0.25);
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+  }
+
+  .btn-submit {
+    margin-top: 1rem;
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 0.85rem;
+  }
+
+  /* Message States styling */
+  .form-message-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    animation: fadeIn var(--transition-normal) ease-out;
+  }
+
+  .message-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem auto;
+  }
+
+  .success-state .message-icon {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 2px solid #10b981;
+  }
+
+  .error-state .message-icon {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 2px solid #ef4444;
+  }
+
+  .form-message-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+  }
+
+  .form-message-state p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto 2rem auto;
+  }
+
+  .form-message-state a {
+    color: var(--color-primary-light);
+    text-decoration: underline;
+  }
+
+  .form-message-state .btn {
+    min-width: 200px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .lead-form-wrapper {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
+<script is:inline define:vars={{ formId, submitUrl }}>
+  (function() {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    const container = document.getElementById(`${formId}-container`);
+    const formState = document.getElementById(`${formId}-form-state`);
+    const successState = document.getElementById(`${formId}-success-state`);
+    const errorState = document.getElementById(`${formId}-error-state`);
+    
+    const tsInput = document.getElementById(`${formId}-timestamp`);
+    if (tsInput) {
+      tsInput.value = new Date().toISOString();
+    }
+
+    // Capture UTM tracking params
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmParams = ['source', 'medium', 'campaign', 'term', 'content'];
+      utmParams.forEach(param => {
+        const value = urlParams.get(`utm_${param}`);
+        if (value) {
+          const input = document.getElementById(`${formId}-utm-${param}`);
+          if (input) input.value = value;
+        }
+      });
+    } catch (e) {
+      console.warn("Failed to capture UTM parameters", e);
+    }
+
+    // Handlers to restore form state
+    const resetBtn = document.getElementById(`${formId}-reset-btn`);
+    const retryBtn = document.getElementById(`${formId}-retry-btn`);
+
+    function showState(state) {
+      formState.style.display = state === 'form' ? 'block' : 'none';
+      successState.style.display = state === 'success' ? 'block' : 'none';
+      errorState.style.display = state === 'error' ? 'block' : 'none';
+      if (state === 'form') {
+        form.reset();
+        if (tsInput) tsInput.value = new Date().toISOString();
+      }
+    }
+
+    if (resetBtn) resetBtn.addEventListener('click', () => showState('form'));
+    if (retryBtn) retryBtn.addEventListener('click', () => showState('form'));
+
+    // Validation
+    function validateField(input) {
+      let isValid = true;
+      const errorSpan = document.getElementById(`${input.id}-error`);
+      
+      if (input.required) {
+        if (input.type === 'checkbox') {
+          isValid = input.checked;
+        } else {
+          isValid = input.value.trim() !== "";
+        }
+      }
+
+      if (isValid && input.type === 'email' && input.value.trim() !== "") {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        isValid = emailRegex.test(input.value.trim());
+      }
+
+      if (isValid) {
+        input.classList.remove('invalid');
+        if (errorSpan) errorSpan.style.display = 'none';
+      } else {
+        input.classList.add('invalid');
+        if (errorSpan) errorSpan.style.display = 'block';
+      }
+
+      return isValid;
+    }
+
+    // Setup real-time validation triggers
+    const inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('blur', () => validateField(input));
+      input.addEventListener('change', () => validateField(input));
+    });
+
+    // Form submission
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      let formIsValid = true;
+      inputs.forEach(input => {
+        if (!validateField(input)) {
+          formIsValid = false;
+        }
+      });
+
+      if (!formIsValid) {
+        // Find first invalid input and focus it
+        const firstInvalid = form.querySelector('.invalid');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      // If simulated mode
+      if (!submitUrl) {
+        showState('success');
+        return;
+      }
+
+      // Gather form data and post
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch(submitUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          showState('success');
+        } else {
+          showState('error');
+        }
+      } catch (err) {
+        console.error("Submission error", err);
+        showState('error');
+      }
+    });
+  })();
+</script>

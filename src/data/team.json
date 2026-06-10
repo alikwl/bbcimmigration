@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Vanshika Verma",
+    "role": "Immigration Case Worker",
+    "credential": "Case Operations",
+    "bio": "Vanshika specializes in managing client dossiers and ensuring compliance checks match the rigorous standards set by IRCC.",
+    "image": "/assets/Vanshika Verma.jpg"
+  },
+  {
+    "name": "Dilbag Singh Gill",
+    "role": "Operations Manager",
+    "credential": "Firm Operations",
+    "bio": "Dilbag directs company operations, managing processing schedules and ensuring workflow efficiency for visa applications.",
+    "image": "/assets/Dilbag Singh Gill.png"
+  },
+  {
+    "name": "Priyanka Chithaloori",
+    "role": "Case Manager",
+    "credential": "Client Relations & Case Management",
+    "bio": "Priyanka coordinates client relations and case planning, ensuring each application matches its individual strategic profile.",
+    "image": "/assets/Priyanka Chithaloori.jpg"
+  }
+]

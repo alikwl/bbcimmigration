@@ -1,0 +1,827 @@
+[
+  {
+    "slug": "visitor-visa",
+    "title": "Visitor Visa",
+    "category": "Visa",
+    "shortDescription": "Explore Canada for tourism, business trips, or visiting family and friends with a temporary resident visa.",
+    "intro": "Canada welcomes millions of temporary visitors every year. A Temporary Resident Visa (TRV), commonly referred to as a visitor visa, allows you to travel to and enter Canada for a temporary stay.",
+    "whoThisIsFor": [
+      "Tourists wishing to explore Canada's cities and national parks",
+      "Individuals visiting family members or friends residing in Canada",
+      "Business professionals attending short-term meetings, conferences, or workshops"
+    ],
+    "requirements": [
+      "Possess a valid passport with at least 6 months validity",
+      "Demonstrate ties to your home country (e.g., job, property, family)",
+      "Show sufficient funds to cover your expenses during your stay in Canada",
+      "Be in good health and have no criminal record"
+    ],
+    "documents": [
+      "Valid passport pages",
+      "Financial bank statements of the last 4-6 months",
+      "Letter of invitation (if visiting family/friends)",
+      "Travel itinerary or booking details",
+      "Proof of employment or business ownership in home country"
+    ],
+    "howWeHelp": [
+      "Guide you on gathering the most persuasive financial and tie-to-home-country evidence",
+      "Draft a customized submission letter explaining your travel purpose",
+      "Review all supporting files for compliance and completeness",
+      "Submit the application through the official IRCC portal"
+    ],
+    "processTimeline": [
+      "Step 1: Document checklist and collection (1-2 weeks)",
+      "Step 2: File preparation and letter drafting (1 week)",
+      "Step 3: Portal submission and biometrics request (1 week)",
+      "Step 4: Government processing (varies by country of application, typically 2-8 weeks)"
+    ],
+    "faqs": [
+      {
+        "question": "How long can I stay in Canada with a visitor visa?",
+        "answer": "Most visitor visas allow you to remain in Canada for up to six months. The exact duration is determined by the border services officer at your port of entry. If you need to stay longer, you can apply for an extension before your authorized stay expires."
+      },
+      {
+        "question": "Do I need a letter of invitation to apply for a visitor visa?",
+        "answer": "A letter of invitation is not mandatory, but it strengthens your application if you are visiting family or friends. The letter should include the host's contact details, their immigration status in Canada, and a brief explanation of your visit purpose and planned duration."
+      },
+      {
+        "question": "Can I work in Canada on a visitor visa?",
+        "answer": "No. A visitor visa does not authorize you to work in Canada. If you wish to work, you must obtain a separate work permit. Attempting to work on a visitor visa may result in removal and future inadmissibility."
+      }
+    ]
+  },
+  {
+    "slug": "study-abroad",
+    "title": "Study Abroad (Student Visa)",
+    "category": "Visa",
+    "shortDescription": "Pursue your educational goals at world-class Canadian designated learning institutions (DLI).",
+    "intro": "Studying in Canada is one of the most reliable pathways to gaining valuable international experience, improving language skills, and opening future pathways to permanent residency.",
+    "whoThisIsFor": [
+      "High school graduates seeking university or college degrees in Canada",
+      "Professionals aiming to upgrade skills through post-graduate diplomas",
+      "Language learners enrolling in approved ESL programs"
+    ],
+    "requirements": [
+      "An official Letter of Acceptance (LOA) from a Designated Learning Institution (DLI)",
+      "Proof of financial support (tuition fee payment + living expenses via GIC or bank accounts)",
+      "Language proficiency matching the course requirements",
+      "No security or medical issues"
+    ],
+    "documents": [
+      "Letter of Acceptance from DLI",
+      "Provincial Attestation Letter (PAL) if applicable",
+      "Guaranteed Investment Certificate (GIC) receipt of $20,635+ CAD",
+      "IELTS / CELPIP / TOEFL score sheet",
+      "Academic transcripts and diplomas",
+      "Study Plan / Statement of Purpose"
+    ],
+    "howWeHelp": [
+      "Assist in aligning your academic history with your proposed study program",
+      "Help draft a structured Statement of Purpose outlining career goals",
+      "Verify Provincial Attestation Letter requirements and exemptions",
+      "Handle study permit extensions and modifications if already in Canada"
+    ],
+    "processTimeline": [
+      "Step 1: College/University application and LOA receipt (4-12 weeks)",
+      "Step 2: Financial preparation (GIC & Tuition payment) (2 weeks)",
+      "Step 3: Provincial Attestation Letter request (1-4 weeks)",
+      "Step 4: Study Permit application submission (1 week)",
+      "Step 5: IRCC decision (typically 4-12 weeks depending on Student Direct Stream eligibility)"
+    ],
+    "faqs": [
+      {
+        "question": "Can I work while studying in Canada?",
+        "answer": "Yes, most study permit holders are eligible to work up to 20 hours per week during academic sessions and full-time during scheduled breaks such as summer or winter holidays, provided their study permit includes a work authorization condition."
+      },
+      {
+        "question": "What is a Provincial Attestation Letter (PAL)?",
+        "answer": "A PAL is a document issued by a province or territory confirming that your application has been assessed against the provincial cap on study permits. Most new study permit applicants require a PAL, though certain programs (e.g., master's, doctoral) may be exempt."
+      },
+      {
+        "question": "Can my spouse accompany me to Canada on my study permit?",
+        "answer": "Spouses or common-law partners of students enrolled in eligible university or college programs may qualify for a Spousal Open Work Permit (SOWP). Eligibility depends on your program level, institution type, and recent IRCC policy updates."
+      }
+    ]
+  },
+  {
+    "slug": "business-visa",
+    "title": "Business Visa",
+    "category": "Visa",
+    "shortDescription": "Conduct business, attend corporate meetings, or explore investment opportunities in Canada.",
+    "intro": "If you plan to visit Canada temporarily to look for new business opportunities, invest, or build business relationships, you may need a Business Visitor Visa.",
+    "whoThisIsFor": [
+      "Corporate executives attending board meetings or general meetings in Canada",
+      "Potential investors evaluating Canadian markets or properties",
+      "Technical representatives installing or servicing equipment sold by a foreign company"
+    ],
+    "requirements": [
+      "Plan to stay for less than six months",
+      "No intent to enter the Canadian labor market directly (no local employment)",
+      "Main place of business and source of income is outside Canada",
+      "Sufficient financial records and proof of business activities"
+    ],
+    "documents": [
+      "Invitation letter from host company in Canada",
+      "Support letter from employing company outside Canada",
+      "Proof of current business transactions or contracts",
+      "Valid passport and evidence of ties to home country"
+    ],
+    "howWeHelp": [
+      "Coordinate with Canadian hosts to draft legally sound invitation letters",
+      "Prepare application to ensure no intent of local labor market entry is triggered",
+      "Submit through the proper corporate processing channels"
+    ],
+    "processTimeline": [
+      "Step 1: Intake and analysis of corporate relations (1 week)",
+      "Step 2: Compilation of corporate documents and invitations (1-2 weeks)",
+      "Step 3: Submission and processing (2-6 weeks)"
+    ],
+    "faqs": [
+      {
+        "question": "What is the difference between a business visa and a work permit?",
+        "answer": "A business visa allows you to conduct business activities like attending meetings, conferences, or exploring investment opportunities without directly entering the Canadian labor market. A work permit is required when you are being paid by a Canadian employer or performing hands-on labor in Canada."
+      },
+      {
+        "question": "Can I extend my business visit beyond six months?",
+        "answer": "Yes, you may apply for a visitor record extension before your initial authorized stay expires. However, you must continue to meet the conditions of a business visitor and demonstrate that your primary source of income remains outside Canada."
+      }
+    ]
+  },
+  {
+    "slug": "express-entry",
+    "title": "Express Entry",
+    "category": "Immigration",
+    "shortDescription": "The primary pathway for skilled professionals to secure Canadian permanent residency.",
+    "intro": "Express Entry is Canada's fast-track, points-based application management system for three major federal economic programs: Federal Skilled Worker, Canadian Experience Class, and Federal Skilled Trades.",
+    "whoThisIsFor": [
+      "Skilled workers outside Canada with university education and strong English/French skills",
+      "Temporary foreign workers in Canada with at least 1 year of skilled work experience",
+      "Trade professionals with certifications or job offers in eligible trades"
+    ],
+    "requirements": [
+      "Education Credential Assessment (ECA) for credentials earned outside Canada",
+      "Language proficiency tests (minimum CLB 7 for Federal Skilled Worker)",
+      "At least 1 year of continuous skilled work experience in TEER 0, 1, 2, or 3",
+      "Achieve high enough Comprehensive Ranking System (CRS) score to receive an ITA"
+    ],
+    "documents": [
+      "ECA report from WES or equivalent body",
+      "Language test results (IELTS / CELPIP / TEF / TCF)",
+      "Work reference letters conforming to IRCC standards",
+      "Proof of funds (unless authorized to work in Canada)",
+      "Police clearance certificates"
+    ],
+    "howWeHelp": [
+      "Calculate your actual and potential CRS score accurately",
+      "Advise on strategy to boost your CRS score (language, secondary credentials, etc.)",
+      "Review job descriptions to match the correct NOC/TEER codes",
+      "Prepare complete e-APR application packages once an ITA is received"
+    ],
+    "processTimeline": [
+      "Step 1: ECA & Language testing preparation (1-3 months)",
+      "Step 2: Profile creation and entry into the Express Entry pool (1 week)",
+      "Step 3: Awaiting Invitation to Apply (ITA) (draws occur bi-weekly)",
+      "Step 4: Submitting electronic Application for Permanent Residence (e-APR) within 60 days of ITA",
+      "Step 5: Final visa processing by IRCC (typically 6 months)"
+    ],
+    "faqs": [
+      {
+        "question": "What is a good CRS score for Express Entry?",
+        "answer": "CRS cutoff scores fluctuate with each draw. General draws have historically ranged from roughly 450 to 530 points. Category-based draws (e.g., healthcare, STEM, French-language) may have lower cutoffs. Improving your language scores or obtaining a provincial nomination can significantly boost your ranking."
+      },
+      {
+        "question": "How long does Express Entry processing take?",
+        "answer": "After receiving an Invitation to Apply (ITA) and submitting a complete e-APR, the federal government targets a processing time of approximately six months for most electronic applications. Delays may occur if additional documentation or background checks are required."
+      },
+      {
+        "question": "Do I need a job offer to apply through Express Entry?",
+        "answer": "No, a job offer is not required for Express Entry. However, a valid job offer supported by an LMIA adds 50 to 200 CRS points, which can significantly improve your chances of receiving an ITA in a competitive draw."
+      }
+    ]
+  },
+  {
+    "slug": "provincial-nominee-program",
+    "title": "Provincial Nominee Program (PNP)",
+    "category": "Immigration",
+    "shortDescription": "Get nominated by a Canadian province based on local economic and labor demands.",
+    "intro": "Canada's provinces and territories have unique agreements with the federal government allowing them to nominate individuals for permanent residency based on regional economic demands.",
+    "whoThisIsFor": [
+      "Workers with active job offers from employers in specific provinces",
+      "International graduates from institutions in specific provinces",
+      "Skilled professionals in high-demand pools (e.g., Tech, Healthcare, Childcare)"
+    ],
+    "requirements": [
+      "Meet the minimum criteria of the specific provincial nomination stream",
+      "Intention to reside in the nominating province or territory",
+      "Possess a valid profile under Express Entry (for Express Entry linked streams) or file directly"
+    ],
+    "documents": [
+      "Provincial nomination certificate (once received)",
+      "Employer job offer letter and corporate details (if applicable)",
+      "Education, language, and work experience proofs identical to provincial standards"
+    ],
+    "howWeHelp": [
+      "Identify the best matching provincial stream out of over 80 active pathways",
+      "Prepare the provincial Expression of Interest (EOI) and nomination application",
+      "Submit the subsequent PR application to IRCC post-nomination"
+    ],
+    "processTimeline": [
+      "Step 1: Evaluation of credentials against provincial matrix (1-2 weeks)",
+      "Step 2: Submission of Expression of Interest (EOI) (varies)",
+      "Step 3: Provincial nomination invitation and application (1-3 months)",
+      "Step 4: Federal PR application (6-18 months depending on paper/online stream)"
+    ],
+    "faqs": [
+      {
+        "question": "Which province is easiest to get nominated by?",
+        "answer": "There is no single 'easiest' province; eligibility depends on your qualifications, work experience, language ability, and any existing ties to a province. Some provinces have tech-specific draws with lower barriers, while others prioritize healthcare workers or tradespeople. A proper assessment against all active streams is the best approach."
+      },
+      {
+        "question": "Does a PNP nomination guarantee permanent residency?",
+        "answer": "A provincial nomination greatly strengthens your PR application and adds 600 CRS points if linked to Express Entry, virtually guaranteeing an ITA. However, the final PR decision rests with the federal government, which evaluates admissibility (health, security, criminality) independently."
+      }
+    ]
+  },
+  {
+    "slug": "business-immigration",
+    "title": "Business Immigration",
+    "category": "Immigration",
+    "shortDescription": "Establish, buy, or invest in a business in Canada to gain permanent residency.",
+    "intro": "Canada seeks active entrepreneurs, investors, and business leaders who have the capital and capability to establish or acquire businesses that create jobs for Canadians.",
+    "whoThisIsFor": [
+      "Experienced managers and business owners with significant personal net worth",
+      "Entrepreneurs with innovative startup ideas supported by designated venture capital/angel networks"
+    ],
+    "requirements": [
+      "Minimum net worth and verifiable source of funds (varies from $300k to $1M+ CAD)",
+      "Active management role in the proposed business",
+      "Commitment to create jobs for Canadian citizens or permanent residents"
+    ],
+    "documents": [
+      "Net worth verification report from third-party audit",
+      "Comprehensive Business Plan conforming to provincial or federal startup rules",
+      "Evidence of business ownership history and revenue"
+    ],
+    "howWeHelp": [
+      "Assist in drafting a professional, market-tested Business Plan",
+      "Manage net worth verification processes through authorized auditors",
+      "Support you from the initial work permit phase through to permanent residency nomination"
+    ],
+    "processTimeline": [
+      "Step 1: Net worth audit and business planning (2-4 months)",
+      "Step 2: Provincial registration or Start-Up Visa pitch (3-6 months)",
+      "Step 3: Temporary Work Permit issuance to start operations (3-6 months)",
+      "Step 4: Permanent Residency nomination (12-24 months)"
+    ],
+    "faqs": [
+      {
+        "question": "What is the Start-Up Visa Program?",
+        "answer": "The Start-Up Visa Program is a federal pathway that grants permanent residency to entrepreneurs with innovative business ideas who secure support from a designated Canadian venture capital fund, angel investor group, or business incubator. It does not require a specific net worth threshold but does require a letter of support from a designated organization."
+      },
+      {
+        "question": "How much money do I need to invest for business immigration?",
+        "answer": "Investment minimums vary widely. Provincial entrepreneur streams may require a personal net worth of $300,000 to $600,000 CAD and a minimum investment of $100,000 to $300,000 CAD. The federal Start-Up Visa does not set a fixed investment amount but requires backing from a designated organization."
+      }
+    ]
+  },
+  {
+    "slug": "skilled-immigration",
+    "title": "Skilled Immigration",
+    "category": "Immigration",
+    "shortDescription": "Paths to permanent residency for professionals, tradespeople, and technicians.",
+    "intro": "If you are a skilled worker looking to relocate to Canada permanently, there are several federal and provincial economic programs tailored to reward your professional qualifications.",
+    "whoThisIsFor": [
+      "Skilled professionals in administrative, professional, and technical jobs",
+      "Tradespeople with certifications or experience in manufacturing, construction, and resource sectors"
+    ],
+    "requirements": [
+      "Minimum language levels matching professional categorization",
+      "Verified work experience records with job duties matching national occupational databases"
+    ],
+    "documents": [
+      "Work reference letters with salary and duty detail",
+      "Educational credential reports",
+      "Language test certificates"
+    ],
+    "howWeHelp": [
+      "Perform NOC code mapping to ensure correct program alignment",
+      "Draft standard reference templates for employer signatures",
+      "Represent your case throughout the immigration process"
+    ],
+    "processTimeline": [
+      "Step 1: File evaluation and planning (1 week)",
+      "Step 2: Document compilation (4-8 weeks)",
+      "Step 3: Program entry and processing (6-12 months)"
+    ],
+    "faqs": [
+      {
+        "question": "What NOC/TEER codes qualify for skilled immigration?",
+        "answer": "For most federal economic programs, occupations classified under TEER 0 (management), TEER 1 (professional), TEER 2 (technical/skilled trades), and TEER 3 (intermediate) are eligible. Some provincial streams also accept TEER 4 and 5 occupations if they are in demand locally."
+      },
+      {
+        "question": "Do I need Canadian work experience for skilled immigration?",
+        "answer": "Not necessarily. The Federal Skilled Worker stream within Express Entry accepts foreign work experience exclusively. However, Canadian work experience is required for the Canadian Experience Class (CEC), and it provides additional CRS points that can improve your ranking."
+      }
+    ]
+  },
+  {
+    "slug": "family-immigration",
+    "title": "Family Immigration",
+    "category": "Immigration",
+    "shortDescription": "Reunite families through pathways for parents, grandparents, and dependents.",
+    "intro": "Family reunification is a core pillar of Canadian immigration policy. Canadian citizens and permanent residents can sponsor eligible family members to live in Canada permanently.",
+    "whoThisIsFor": [
+      "Sponsors wishing to bring their parents or grandparents to Canada",
+      "Parents sponsoring dependent children (biological or adopted)"
+    ],
+    "requirements": [
+      "Sponsor must be a Canadian citizen or Permanent Resident aged 18+",
+      "Sponsor must meet the Minimum Necessary Income (MNI) for parent sponsorships",
+      "Agree to sign an undertaking to support the sponsored family member financially"
+    ],
+    "documents": [
+      "Tax files (NOA) of the sponsor for the past 3 consecutive years",
+      "Birth certificates proving family relationships",
+      "Sponsorship Agreement and Undertaking forms"
+    ],
+    "howWeHelp": [
+      "Audit your income history to verify MNI compliance",
+      "Prepare bulletproof relationship evidence files to prevent delays",
+      "Submit files under electronic family class portals"
+    ],
+    "processTimeline": [
+      "Step 1: Intake and verification of sponsor income (1-2 weeks)",
+      "Step 2: Relationship evidence compilation (2-4 weeks)",
+      "Step 3: Submission and PR processing (12-24 months depending on stream)"
+    ],
+    "faqs": [
+      {
+        "question": "How long does parent and grandparent sponsorship take?",
+        "answer": "Processing times for parent and grandparent sponsorship are typically 20 to 24 months from the date IRCC acknowledges receipt of a complete application. The annual intake cap means you must first be selected through the interest-to-sponsor lottery or submission window before you can file a full application."
+      },
+      {
+        "question": "What is the Super Visa as an alternative to parent sponsorship?",
+        "answer": "The Super Visa is a multi-entry visitor visa valid for up to 10 years that allows parents and grandparents to stay in Canada for up to 5 years per visit. It requires proof of private medical insurance, a signed letter of financial support from the child or grandchild in Canada, and evidence that the sponsor meets the income threshold."
+      }
+    ]
+  },
+  {
+    "slug": "closed-work-permit-lmia",
+    "title": "Closed Work Permit (LMIA)",
+    "category": "Work Permit",
+    "shortDescription": "Work for a specific Canadian employer who has received a positive LMIA.",
+    "intro": "An LMIA-based closed work permit allows a foreign national to work in Canada for a specific employer at a specific location, after the employer proves no Canadian is available for the role.",
+    "whoThisIsFor": [
+      "Foreign nationals who have secured a job offer from an employer holding an active LMIA",
+      "Employers looking to hire foreign talent and needing assistance with the LMIA application"
+    ],
+    "requirements": [
+      "A positive Labor Market Impact Assessment (LMIA) letter from ESDC",
+      "A written job offer and signed employment contract",
+      "Proof that the applicant meets the education and experience requirements of the job"
+    ],
+    "documents": [
+      "LMIA decision letter & copy of the LMIA application",
+      "Employment contract",
+      "Proof of qualification (certificates, degrees, reference letters)"
+    ],
+    "howWeHelp": [
+      "Assist employers through the ESDC recruitment and advertising process",
+      "Ensure proper wage thresholds and NOC classifications are met",
+      "Apply for the employee's work permit immediately upon receipt of the positive LMIA"
+    ],
+    "processTimeline": [
+      "Step 1: LMIA recruitment period by employer (4 weeks)",
+      "Step 2: LMIA application to ESDC (2-8 weeks)",
+      "Step 3: Work permit application submission post-LMIA approval (1 week)",
+      "Step 4: Work permit processing (2-12 weeks depending on applicant location)"
+    ],
+    "faqs": [
+      {
+        "question": "What is an LMIA and why is it needed?",
+        "answer": "A Labour Market Impact Assessment (LMIA) is a document that a Canadian employer must obtain from Employment and Social Development Canada (ESDC) before hiring a foreign worker. It proves that no qualified Canadian citizen or permanent resident is available for the position, and it verifies the wage offer meets regional standards."
+      },
+      {
+        "question": "Can I change employers while on a closed work permit?",
+        "answer": "A closed work permit is employer-specific. If you wish to change employers, your new employer must obtain a new positive LMIA, and you must apply for a new work permit. Working for an unauthorized employer violates permit conditions and may affect your future applications."
+      }
+    ]
+  },
+  {
+    "slug": "spousal-open-work-permit",
+    "title": "Spousal Open Work Permit (SOWP)",
+    "category": "Work Permit",
+    "shortDescription": "Work for any employer in Canada while your spouse is studying or working here.",
+    "intro": "Keep your family together and support your household. Partners of certain skilled workers, international students, and PR applicants are eligible for open work permits.",
+    "whoThisIsFor": [
+      "Spouses or common-law partners of international students in eligible university/college programs",
+      "Spouses of highly skilled temporary foreign workers in Canada",
+      "In-land spousal sponsorship applicants"
+    ],
+    "requirements": [
+      "Proof of genuine marriage or common-law relationship",
+      "Proof of partner's valid study or work permit status in Canada",
+      "Enrollment in eligible programs or employment in skilled sectors (TEER 0-3)"
+    ],
+    "documents": [
+      "Marriage certificate or statutory declaration of common-law",
+      "Spouse's study/work permit and enrollment letter/pay stubs",
+      "Relationship history proof (photos, bank statements, chat logs)"
+    ],
+    "howWeHelp": [
+      "Verify spouse eligibility under recent, strict IRCC open work permit changes",
+      "Collect and organize relationship evidence to confirm genuineness",
+      "File your SOWP application alongside or after the primary permit application"
+    ],
+    "processTimeline": [
+      "Step 1: Document checklist and relation dossier preparation (2 weeks)",
+      "Step 2: Application submission (1 week)",
+      "Step 3: Decision processing (4-12 weeks)"
+    ],
+    "faqs": [
+      {
+        "question": "Are all student spouses eligible for an open work permit?",
+        "answer": "No. Recent policy changes restrict spousal open work permits to partners of students enrolled in eligible master's, doctoral, or certain professional degree programs at universities. Spouses of students in college diploma or certificate programs may no longer qualify. Always verify the latest eligibility criteria before applying."
+      },
+      {
+        "question": "How do I prove a common-law relationship for the SOWP?",
+        "answer": "IRCC requires evidence of 12 consecutive months of cohabitation. Accepted proof includes shared lease or mortgage documents, joint bank accounts, utility bills in both names, statutory declarations from third parties, and photos demonstrating a shared household over time."
+      }
+    ]
+  },
+  {
+    "slug": "bridging-open-work-permit",
+    "title": "Bridging Open Work Permit (BOWP)",
+    "category": "Work Permit",
+    "shortDescription": "Maintain your legal status and work in Canada while awaiting your PR decision.",
+    "intro": "Do not let your work authorization expire. If you have already applied for permanent residency, a BOWP bridges the gap until your PR is finalized.",
+    "whoThisIsFor": [
+      "Express Entry, PNP, or Agri-Food PR applicants with active work permits expiring in under 4 months"
+    ],
+    "requirements": [
+      "Currently reside in Canada",
+      "Hold a valid work permit that is set to expire soon",
+      "Have submitted an online PR application and received an official Acknowledgment of Receipt (AOR)"
+    ],
+    "documents": [
+      "Official Acknowledgment of Receipt (AOR) letter from IRCC",
+      "Copy of current valid work permit",
+      "PR application details and processing fees receipt"
+    ],
+    "howWeHelp": [
+      "Verify that your PR application stream qualifies for a BOWP",
+      "Submit the application before your current permit expires to ensure 'maintained status'",
+      "Handle extensions if processing takes longer than expected"
+    ],
+    "processTimeline": [
+      "Step 1: Verify AOR and current permit dates (1 day)",
+      "Step 2: Submission of BOWP application (1 week)",
+      "Step 3: Maintained status starts immediately; processing takes 2-4 months"
+    ],
+    "faqs": [
+      {
+        "question": "What happens if my work permit expires before the BOWP is approved?",
+        "answer": "If you submitted your BOWP application before your current work permit expired, you are on 'maintained status' (also called implied status). This means you can continue working under the same conditions as your expiring permit while IRCC processes your bridging application."
+      },
+      {
+        "question": "Which PR programs qualify me for a BOWP?",
+        "answer": "Bridging Open Work Permits are generally available to applicants under the Express Entry system (Federal Skilled Worker, Canadian Experience Class, Federal Skilled Trades), the Provincial Nominee Program, and certain pilot programs like the Agri-Food Pilot. Confirm your specific stream's eligibility with a licensed consultant."
+      }
+    ]
+  },
+  {
+    "slug": "post-graduate-work-permit",
+    "title": "Post-Graduate Work Permit (PGWP)",
+    "category": "Work Permit",
+    "shortDescription": "Gain valuable Canadian work experience after graduating from a DLI.",
+    "intro": "A Post-Graduation Work Permit (PGWP) gives international graduates the freedom to work for any employer in Canada, gaining the experience needed to qualify for permanent residence.",
+    "whoThisIsFor": [
+      "International students who have completed an eligible program at a DLI lasting at least 8 months"
+    ],
+    "requirements": [
+      "Apply within 180 days of receiving your official final marks or graduation letter",
+      "Maintained full-time student status during each semester of study",
+      "Completed study program in a PGWP-eligible DLI institution"
+    ],
+    "documents": [
+      "Official final academic transcript",
+      "Graduation confirmation letter from the DLI",
+      "Copy of valid study permit"
+    ],
+    "howWeHelp": [
+      "Audit your transcripts to verify full-time enrollment compliance",
+      "Apply for the PGWP using the IRCC portal to guarantee immediate work authorization upon submission"
+    ],
+    "processTimeline": [
+      "Step 1: Secure official DLI graduation files (1 week)",
+      "Step 2: Formulate PGWP portal profile and submit (1 week)",
+      "Step 3: Maintained work authorization starts immediately; approval in 2-3 months"
+    ],
+    "faqs": [
+      {
+        "question": "How long is a PGWP valid?",
+        "answer": "The validity depends on the length of your study program. Programs of 8 months to 2 years receive a PGWP matching the program length. Programs of 2 years or longer typically receive a 3-year PGWP. Multiple programs may be combined under certain conditions."
+      },
+      {
+        "question": "Can I apply for a PGWP if I studied part-time?",
+        "answer": "Generally, you must have maintained full-time student status throughout each academic semester (excluding the final semester, which may be part-time). Unauthorized part-time study during earlier semesters could disqualify your PGWP application. Exceptions exist for documented medical or compassionate leaves."
+      }
+    ]
+  },
+  {
+    "slug": "family-spousal-sponsorships",
+    "title": "Family & Spousal Sponsorship",
+    "category": "Programs",
+    "shortDescription": "Sponsor your spouse, partner, or dependent children for Canadian permanent residency.",
+    "intro": "Canada allows citizens and permanent residents to sponsor their spouse, common-law partner, conjugal partner, or dependent children for immigration.",
+    "whoThisIsFor": [
+      "Sponsors residing in Canada (or citizens intending to return) wishing to sponsor their partner",
+      "Partners currently residing inside or outside Canada"
+    ],
+    "requirements": [
+      "Sponsor must be 18+ and a Canadian citizen or permanent resident",
+      "Must not be receiving social assistance (unless for disability)",
+      "Relationship must be proven to be genuine and not entered into primarily for immigration"
+    ],
+    "documents": [
+      "Marriage certificate or proof of 12-month cohabitation",
+      "Relationship narrative, photos, chat logs, joint leases, and travel records",
+      "Financial undertaking and background declaration forms"
+    ],
+    "howWeHelp": [
+      "Identify whether Inland or Outland sponsorship is best for your timeline",
+      "Assemble, index, and organize relationship proof to prevent integrity audits",
+      "Draft representation letters outlining the history of your relationship"
+    ],
+    "processTimeline": [
+      "Step 1: Relationship assessment and timeline layout (1 week)",
+      "Step 2: Compilation of dynamic evidence dossier (3-6 weeks)",
+      "Step 3: Portal filing (1 week)",
+      "Step 4: Medicals, biometrics requests, and final PR issuance (10-14 months)"
+    ],
+    "faqs": [
+      {
+        "question": "What is the difference between Inland and Outland spousal sponsorship?",
+        "answer": "Inland sponsorship is for partners already living in Canada and may come with an open work permit while the application is processed. Outland sponsorship is for partners living outside Canada and is typically processed through a visa office abroad. Inland processing times are often longer, but the ability to remain in Canada during processing is a key advantage."
+      },
+      {
+        "question": "How does IRCC verify the genuineness of a relationship?",
+        "answer": "Officers review the submitted evidence holistically, looking for consistent timelines, shared finances, cohabitation proof, communication records, photos together over time, and third-party declarations from friends or family. In some cases, IRCC may schedule an interview to further assess the relationship."
+      },
+      {
+        "question": "Can I sponsor my spouse if I was previously sponsored myself?",
+        "answer": "If you were sponsored as a spouse and became a PR, you must wait 5 years from the date you received your permanent residency before you can sponsor a new spouse. This restriction applies regardless of changes in your relationship status."
+      }
+    ]
+  },
+  {
+    "slug": "self-employed-program",
+    "title": "Self-Employed Program",
+    "category": "Programs",
+    "shortDescription": "Immigrate to Canada as a self-employed professional in athletic or cultural activities.",
+    "intro": "The Self-Employed Program allows individuals with relevant experience in cultural activities or athletics to establish themselves as self-employed operators in Canada.",
+    "whoThisIsFor": [
+      "Artists, musicians, designers, authors, and coaches with world-class profiles or self-employed records"
+    ],
+    "requirements": [
+      "At least 2 years of relevant self-employed experience in culture or athletics within the last 5 years",
+      "Intention and ability to be self-employed in Canada and contribute to local arts or sports communities",
+      "Pass minimum points criteria based on age, language, and adaptability"
+    ],
+    "documents": [
+      "Portfolio of professional cultural or athletic achievements",
+      "Tax, banking, and contract records proving self-employed income",
+      "Detailed settlement plan outlining proposed business activities in Canada"
+    ],
+    "howWeHelp": [
+      "Help document and structure your professional portfolio",
+      "Formulate a viable Canadian settlement and business layout plan",
+      "Represent your application through complex federal processing streams"
+    ],
+    "processTimeline": [
+      "Step 1: Professional profile audit (2 weeks)",
+      "Step 2: Business proposal and portfolio layout (4-8 weeks)",
+      "Step 3: Federal application filing and processing (varies widely, typically 24-36 months)"
+    ],
+    "faqs": [
+      {
+        "question": "What types of cultural or athletic activities qualify?",
+        "answer": "Qualifying activities include visual arts, performing arts (music, dance, theater), literary arts, film and broadcasting, crafts, coaching, and competitive athletics. The key requirement is that you were self-employed in these activities or participated at the world-class level (e.g., international competitions or exhibitions)."
+      },
+      {
+        "question": "Why does the Self-Employed Program take so long to process?",
+        "answer": "This program has historically had limited processing capacity and a high volume of applications relative to the allocated officer resources. Processing times of 24 to 36 months or more are common. Filing a complete, well-documented application upfront helps avoid additional officer inquiries that further delay decisions."
+      }
+    ]
+  },
+  {
+    "slug": "caregiver-program",
+    "title": "Caregiver Program",
+    "category": "Programs",
+    "shortDescription": "Immigrate to Canada by providing care for children, seniors, or people with medical needs.",
+    "intro": "Canada offers dedicated pathways for qualified in-home caregivers. These programs provide work permits and a clear track to permanent residence after completing work milestones.",
+    "whoThisIsFor": [
+      "Professional caregivers with experience in child care (nannies) or home support care"
+    ],
+    "requirements": [
+      "A genuine job offer from a Canadian household employer",
+      "Language test results (minimum CLB 5)",
+      "A completed post-secondary education credential matching job expectations"
+    ],
+    "documents": [
+      "Job offer from employer detailing hours and duties",
+      "ECA educational assessment report",
+      "Reference letters confirming caregiving history"
+    ],
+    "howWeHelp": [
+      "Assess whether your employer's household meets the sponsorship requirements",
+      "Draft caregiver contracts that align with provincial employment standards",
+      "Manage both the work permit and PR application packages concurrently"
+    ],
+    "processTimeline": [
+      "Step 1: Secure a qualifying job offer (varies)",
+      "Step 2: Language testing and ECA report (4-8 weeks)",
+      "Step 3: Portal application submission (1-2 weeks)",
+      "Step 4: PR/Work Permit process (typically 12-24 months)"
+    ],
+    "faqs": [
+      {
+        "question": "Can I bring my family with me under the Caregiver Program?",
+        "answer": "Yes. The caregiver permanent residence pathways allow you to include your spouse or common-law partner and dependent children in your PR application. During the work permit phase, family members may be eligible for visitor visas or open work permits depending on the stream."
+      },
+      {
+        "question": "How many months of Canadian work experience do I need for PR through caregiving?",
+        "answer": "Under the current pilot programs, you generally need to accumulate at least 24 months of qualifying full-time Canadian work experience in an eligible caregiving occupation before you can apply for permanent residence through the caregiver pathway."
+      }
+    ]
+  },
+  {
+    "slug": "asylum-seekers",
+    "title": "Asylum & Refugee Claims",
+    "category": "Programs",
+    "shortDescription": "Legal assistance and representation for individuals seeking refugee protection inside Canada.",
+    "intro": "Canada offers refugee protection to individuals inside Canada who face a well-founded fear of persecution, torture, or cruel and unusual treatment in their home country.",
+    "whoThisIsFor": [
+      "Individuals currently in Canada who are unable to return to their home country due to fear of persecution"
+    ],
+    "requirements": [
+      "Must be physically present in Canada",
+      "Must not be subject to a removal order",
+      "Claim must meet the definition of a Convention Refugee or a Person in Need of Protection"
+    ],
+    "documents": [
+      "Basis of Claim (BOC) form",
+      "Identity documents from home country",
+      "Evidence supporting persecution (reports, medical records, news clips, etc.)"
+    ],
+    "howWeHelp": [
+      "Provide sensitive guidance and professional drafting of your Basis of Claim (BOC) form",
+      "Gather relevant country condition documents as corroborating evidence",
+      "Represent you before the Immigration and Refugee Board (IRB) during your hearing"
+    ],
+    "processTimeline": [
+      "Step 1: Initiation of claim at port of entry or online (1-2 days)",
+      "Step 2: Basis of Claim (BOC) form submission (within 15 days of initiation)",
+      "Step 3: Hearing preparation and submission of evidence (2-6 months)",
+      "Step 4: Refugee hearing and IRB decision"
+    ],
+    "faqs": [
+      {
+        "question": "Can I work in Canada while my refugee claim is being processed?",
+        "answer": "Yes. Once your refugee claim has been referred to the Immigration and Refugee Board (IRB), you are eligible to apply for a work permit. Processing of the work permit is typically expedited for refugee claimants. You may also be eligible for interim federal health coverage."
+      },
+      {
+        "question": "What happens if my refugee claim is denied?",
+        "answer": "If your claim is denied, you may have options including a Pre-Removal Risk Assessment (PRRA), an application for judicial review at the Federal Court, or a Humanitarian and Compassionate (H&C) application. Each option has strict timelines, so seeking legal advice immediately after a negative decision is critical."
+      }
+    ]
+  },
+  {
+    "slug": "renewal-and-replacement-of-pr-card",
+    "title": "PR Card Renewal & Replacement",
+    "category": "Additional",
+    "shortDescription": "Renew your expiring Permanent Resident card or replace a lost/damaged document.",
+    "intro": "Keep your travel credentials up to date. Permanent Residents must hold a valid PR Card to board commercial flights or transit through ports of entry back into Canada.",
+    "whoThisIsFor": [
+      "Permanent residents whose card is expiring in under 9 months",
+      "Residents with lost, stolen, or damaged physical PR cards"
+    ],
+    "requirements": [
+      "Physical presence in Canada for at least 730 days in the last 5 years (Residency Obligation)",
+      "Be physically present in Canada to apply (exceptions apply to overseas sponsorship/employment)"
+    ],
+    "documents": [
+      "Copy of current/expiring PR Card",
+      "Valid passport used during residency",
+      "Residency logs detailing all entries and exits from Canada"
+    ],
+    "howWeHelp": [
+      "Perform a residency calculator audit to verify you meet the 730-day requirement",
+      "Compile and structure proof of residency (leases, employment records, school enrollments)",
+      "File your renewal online for faster processing"
+    ],
+    "processTimeline": [
+      "Step 1: Audit of travel dates and residency calculation (1-2 days)",
+      "Step 2: Application compilation and photo capture (1 week)",
+      "Step 3: Submission and processing (1-3 months depending on urgent request eligibility)"
+    ],
+    "faqs": [
+      {
+        "question": "Can I travel outside Canada without a valid PR card?",
+        "answer": "You need a valid PR card to board a commercial flight or other carrier to return to Canada. If you are outside Canada without a valid card, you can apply for a Permanent Resident Travel Document (PRTD) at a Canadian visa office abroad to facilitate your return."
+      },
+      {
+        "question": "What if I have not met the 730-day residency obligation?",
+        "answer": "If you have not been physically present in Canada for at least 730 days in the last 5 years, your PR card renewal may be refused and you could face a determination that you have lost your permanent resident status. Certain exceptions apply if you were accompanying a Canadian citizen spouse abroad or employed by a Canadian company overseas."
+      }
+    ]
+  },
+  {
+    "slug": "appeal",
+    "title": "Immigration Appeals",
+    "category": "Additional",
+    "shortDescription": "Representing your case before the Immigration Appeal Division (IAD) for visa refusals.",
+    "intro": "A refusal is not always the end of the road. Certain permanent residency refusals, residency obligation failures, and removal orders can be appealed at the Immigration Appeal Division (IAD).",
+    "whoThisIsFor": [
+      "Sponsors whose spousal/family applications were refused by IRCC",
+      "PR card holders facing loss of status due to residency obligation audits",
+      "Permanent residents facing removal orders"
+    ],
+    "requirements": [
+      "Appeal must be filed within strict statutory deadlines (typically 30 days from refusal decision)"
+    ],
+    "documents": [
+      "Copy of the official refusal letter / decision package from IRCC",
+      "Notice of Appeal form",
+      "Supporting documentation addressing the grounds of refusal"
+    ],
+    "howWeHelp": [
+      "Evaluate the merits of your refusal and identify errors of law or fact made by officers",
+      "Draft and submit appeal dossiers to the IAD",
+      "Prepare and represent you at Alternative Dispute Resolution (ADR) or oral hearings"
+    ],
+    "processTimeline": [
+      "Step 1: Filing of Notice of Appeal (within 30 days of refusal)",
+      "Step 2: Receipt of record and scheduling (2-6 months)",
+      "Step 3: ADR conference or Full Hearing preparation (3-9 months)",
+      "Step 4: Formal decision from IAD"
+    ],
+    "faqs": [
+      {
+        "question": "What types of decisions can be appealed to the IAD?",
+        "answer": "The IAD handles appeals of spousal/family sponsorship refusals, removal orders against permanent residents, and residency obligation determinations. It does not handle temporary visa refusals (visitor, student, work permits) — those are typically addressed through judicial review at the Federal Court or by resubmitting a new application."
+      },
+      {
+        "question": "How long does an IAD appeal typically take?",
+        "answer": "IAD appeal timelines vary widely based on the complexity of the case and the hearing schedule. From filing the notice of appeal to receiving a final decision, the process typically takes 12 to 18 months. ADR conferences, if successful, can resolve matters more quickly."
+      }
+    ]
+  },
+  {
+    "slug": "citizenship-applications",
+    "title": "Citizenship Applications",
+    "category": "Additional",
+    "shortDescription": "Take the final step in your Canadian journey and become a citizen.",
+    "intro": "Becoming a Canadian citizen is a proud milestone. We guide you through the residence calculations, application submission, and preparation for your citizenship test.",
+    "whoThisIsFor": [
+      "Permanent Residents who have lived in Canada for at least 3 out of the last 5 years"
+    ],
+    "requirements": [
+      "Physically present in Canada for at least 1,095 days within the 5 years before applying",
+      "Filed personal income taxes for at least 3 tax years within the 5-year window",
+      "Language proficiency in English or French (CLB 4 or higher) if aged 18 to 54",
+      "No security, criminal, or status issues"
+    ],
+    "documents": [
+      "Detailed residency calculation log",
+      "Language test results or proof of secondary/post-secondary education in English/French",
+      "Tax Notices of Assessment for the last 3 years",
+      "Copies of passport pages showing travel history"
+    ],
+    "howWeHelp": [
+      "Audit travel records to ensure absolute accuracy of the 1,095-day requirement",
+      "Prepare and submit the digital citizenship application file",
+      "Provide resource materials to assist in passing your citizenship exam"
+    ],
+    "processTimeline": [
+      "Step 1: Travel logs audit and documentation filing (1 week)",
+      "Step 2: Submission of citizenship package (1 week)",
+      "Step 3: AOR receipt and Citizenship test invitation (3-6 months)",
+      "Step 4: Citizenship ceremony invitation and oath (3-6 months post-test)"
+    ],
+    "faqs": [
+      {
+        "question": "What is on the Canadian citizenship test?",
+        "answer": "The citizenship test covers topics from the official study guide 'Discover Canada,' including Canadian history, geography, government structure, rights and responsibilities, Canadian symbols, and the economy. The test is typically 30 multiple-choice questions, and you need to answer at least 15 correctly (75%) to pass."
+      },
+      {
+        "question": "Does time spent in Canada before becoming a PR count toward citizenship?",
+        "answer": "Yes, partially. Each day you were physically present in Canada as a temporary resident or protected person before becoming a PR counts as half a day, up to a maximum credit of 365 days. This can help you reach the 1,095-day requirement sooner."
+      },
+      {
+        "question": "Can I lose my Canadian citizenship once granted?",
+        "answer": "Canadian citizenship is generally permanent and cannot be revoked simply because you live abroad. However, citizenship can be revoked if it was obtained through fraud, false representation, or knowingly concealing material information during the application process."
+      }
+    ]
+  }
+]

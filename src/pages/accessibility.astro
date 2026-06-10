@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Accessibility', item: '/accessibility/' }
+];
+---
+
+<BaseLayout 
+  title="Accessibility Statement" 
+  description="Commitment to digital accessibility and features implemented on our website."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="legal-hero">
+    <div class="container text-center">
+      <h1>Accessibility Statement</h1>
+      <p class="subtitle">Our Commitment to Digital Inclusion</p>
+    </div>
+  </section>
+
+  <section class="legal-content container section-padding">
+    <div class="legal-text-wrapper card">
+      <h2>1. Our Commitment</h2>
+      <p>Busy Bee Canada is dedicated to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone, applying relevant accessibility standards including Web Content Accessibility Guidelines (WCAG) 2.1 level AA specifications.</p>
+      
+      <h2>2. Accessibility Features Built-In</h2>
+      <p>This website incorporates several features designed to improve accessibility, including:</p>
+      <ul>
+        <li><strong>Skip to Main Content Link:</strong> Located at the very top of each page for keyboard navigators who want to bypass headers.</li>
+        <li><strong>ARIA Landmarks & Roles:</strong> Page regions (header, main, footer, navigation) are clearly marked for screen readers.</li>
+        <li><strong>Form Labels:</strong> All input fields and select tags have matching `<label>` elements to ensure screen readers read instructions.</li>
+        <li><strong>Keyboard Navigation:</strong> Interactive elements (dropdowns, buttons, forms, links) are navigable using standard keyboard commands (`Tab`, `Enter`, `Space`).</li>
+      </ul>
+
+      <h2>3. Feedback & Contact</h2>
+      <p>We welcome your feedback on the accessibility of our website. Please let us know if you encounter accessibility barriers by emailing us at <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-hero {
+    background: linear-gradient(135deg, #0b0f19 0%, #1f2937 100%);
+    padding: 4rem 0 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .subtitle {
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  .legal-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .legal-text-wrapper {
+    padding: 3rem;
+  }
+
+  .legal-text-wrapper h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.5rem;
+  }
+
+  .legal-text-wrapper h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .legal-text-wrapper p {
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .legal-text-wrapper ul {
+    list-style: square;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+  }
+
+  .legal-text-wrapper li {
+    margin-bottom: 0.5rem;
+  }
+
+  .legal-text-wrapper a {
+    color: var(--color-accent);
+  }
+</style>

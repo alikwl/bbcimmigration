@@ -1,0 +1,457 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import servicesData from '../data/services.json';
+import { siteConfig } from '../data/site';
+
+// Select the 10 featured services from data
+const featuredSlugs = [
+  'express-entry',
+  'provincial-nominee-program',
+  'closed-work-permit-lmia',
+  'business-immigration',
+  'study-abroad',
+  'family-spousal-sponsorships',
+  'visitor-visa',
+  'citizenship-applications',
+  'caregiver-program',
+  'asylum-seekers'
+];
+const featuredServices = servicesData.filter(s => featuredSlugs.includes(s.slug));
+
+// Process steps
+const processSteps = [
+  { step: "01", title: "Choose Program", desc: "Our licensed RCIC audits your profile to map out all suitable federal and provincial streams." },
+  { step: "02", title: "Prepare Application", desc: "Collect, verify, and translate documents according to strict IRCC standards." },
+  { step: "03", title: "Verify Application", desc: "Rigorous internal review to double-check NOC codes, reference details, and background files." },
+  { step: "04", title: "Submit File", desc: "Submit through representation portals and coordinate biometrics, medicals, and updates." }
+];
+
+// Testimonials
+const testimonials = [
+  {
+    quote: "Busy Bee Canada made the Express Entry process smooth and stress-free. We received our PR in just five months!",
+    author: "Elena & David M.",
+    origin: "Ukraine",
+    service: "Express Entry Class"
+  },
+  {
+    quote: "Harsimran's advice on our spousal sponsorship application was invaluable. Excellent communication and absolute honesty.",
+    author: "Marc L.",
+    origin: "United Kingdom",
+    service: "Spousal Sponsorship"
+  },
+  {
+    quote: "My study permit application was refused twice before I approached Busy Bee Canada. Their review highlighted errors I was making, and the third try was approved!",
+    author: "Rajpreet S.",
+    origin: "India",
+    service: "Study Permit Program"
+  }
+];
+---
+
+<BaseLayout>
+  <!-- Hero Section -->
+  <section class="home-hero">
+    <div class="container hero-layout">
+      <!-- Hero Text -->
+      <div class="hero-text-block">
+        <span class="trust-badge">🇨🇦 Regulated Canadian Immigration Experts</span>
+        <h1>Your Gateway to a New Life in Canada</h1>
+        <p class="hero-desc">Navigate the complex Canadian immigration system with confidence. Our licensed Regulated Canadian Immigration Consultants (RCIC) provide clear, professional representation for visas, work permits, sponsorships, and permanent residency.</p>
+        <div class="hero-ctas">
+          <a href="#featured-services" class="btn btn-primary">Explore Pathways</a>
+          <a href="/about-us/" class="btn btn-outline">Meet Our Consultants</a>
+        </div>
+      </div>
+      <!-- Hero Form -->
+      <div class="hero-form-block">
+        <LeadForm formId="homeHeroForm" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome / Trust Section -->
+  <section class="welcome-section container section-padding">
+    <div class="welcome-grid">
+      <div class="welcome-text">
+        <span class="section-tag">Welcome to Busy Bee Canada</span>
+        <h2>Experienced Representation You Can Rely On</h2>
+        <p>Busy Bee Canada Immigration is an ICCRC licensed immigration firm in Barrie, Ontario. Each case for us has been a personal journey. Our motto is “Let’s get it done” & we approach each case with individual nuance and a human touch.</p>
+        <p>Our work matches all compliance directives issued by the College of Immigration and Citizenship Consultants (CICC). We do not guarantee outcomes—because only government officers make the final decision—but we guarantee diligent, meticulous, and expert preparation of your files.</p>
+        <a href="/about-us/" class="btn btn-outline">Read Our Philosophy</a>
+      </div>
+      <div class="welcome-visual-placeholder card glass">
+        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#1e2937" rx="8" />
+          <path d="M200 40 L360 200 H40 L200 40 Z" fill="url(#hero-grad-welcome)" opacity="0.1" />
+          <circle cx="200" cy="140" r="40" fill="#eab308" opacity="0.8" />
+          <path d="M185 140 L195 150 L215 130" stroke="#0f172a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="50%" y="220" dominant-baseline="middle" text-anchor="middle" font-family="Outfit" font-size="18" font-weight="700" fill="#ffffff">CICC Regulated (L3 RCIC)</text>
+          <text x="50%" y="245" dominant-baseline="middle" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="12" fill="#9ca3af">Verify our credentials anytime</text>
+          <defs>
+            <linearGradient id="hero-grad-welcome" x1="200" y1="40" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#3b82f6" />
+              <stop offset="1" stop-color="#1e40af" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Grid Section -->
+  <section class="services-section" id="featured-services">
+    <div class="container section-padding">
+      <div class="section-header text-center">
+        <span class="section-tag">You're in Good Hands</span>
+        <h2>Explore Canada Immigration Pathways</h2>
+        <p class="section-subtitle">We manage applications across all major temporary and permanent immigration categories.</p>
+      </div>
+      <div class="grid grid-3">
+        {featuredServices.map(service => (
+          <ServiceCard 
+            title={service.title} 
+            shortDescription={service.shortDescription} 
+            category={service.category} 
+            slug={service.slug} 
+          />
+        ))}
+      </div>
+      <div class="text-center view-all-box">
+        <a href="/services/" class="btn btn-outline">View All 19 Service Pathways &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps Section -->
+  <section class="process-section">
+    <div class="container section-padding">
+      <div class="section-header text-center">
+        <span class="section-tag">Our Methodology</span>
+        <h2>How We Guide Your Case</h2>
+        <p class="section-subtitle">A simple, transparent, and structured process for every client file.</p>
+      </div>
+      <div class="grid grid-4 process-grid">
+        {processSteps.map(step => (
+          <div class="process-card card">
+            <span class="process-number">{step.step}</span>
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Mid-page CTAs -->
+  <section class="cta-cards-section container">
+    <div class="grid grid-3">
+      <div class="cta-card card text-center">
+        <h3>Immigration Class Plans</h3>
+        <p>Read about the difference between Economic, Business, and Family sponsorship categories.</p>
+        <a href="/immigration/" class="btn btn-outline">Immigration Overview</a>
+      </div>
+      <div class="cta-card card text-center highlight-cta">
+        <h3>Check Your Eligibility</h3>
+        <p>Complete our online evaluation form. Our case managers review files manually within 1 day.</p>
+        <a href="#homeHeroForm" class="btn btn-accent">Evaluate Profile Now</a>
+      </div>
+      <div class="cta-card card text-center">
+        <h3>Schedule Consultation</h3>
+        <p>Reserve a video call session with an RCIC consultant for strategic, custom advice.</p>
+        <a href="/book-consultation/" class="btn btn-outline">Book Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section container section-padding">
+    <div class="section-header text-center">
+      <span class="section-tag">Client Stories</span>
+      <h2>Feedback From Successful Applicants</h2>
+    </div>
+    
+    <div class="grid grid-3 testimonial-grid">
+      {testimonials.map(item => (
+        <div class="testimonial-card card glass">
+          <p class="quote">“{item.quote}”</p>
+          <div class="author-info">
+            <span class="name">{item.author}</span>
+            <span class="details">{item.service} | From {item.origin}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Final Call block -->
+  <section class="final-call-section container">
+    <div class="final-card card text-center">
+      <h2>Build Your Canadian Future Today</h2>
+      <p>Consult with Regulated Canadian Immigration Consultants who put your needs first.</p>
+      <div class="call-actions">
+        <a href="/book-consultation/" class="btn btn-accent">Book Paid Consultation</a>
+        <a href={`tel:${siteConfig.phone}`} class="btn btn-outline">📞 Call {siteConfig.phone}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .home-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+    padding: 6rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .trust-badge {
+    background-color: rgba(234, 179, 8, 0.1);
+    color: var(--color-accent);
+    border: 1px solid rgba(234, 179, 8, 0.2);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.35rem 0.8rem;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .home-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.15;
+  }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+  }
+
+  /* Welcome Section */
+  .welcome-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .section-tag {
+    color: var(--color-primary-light);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .welcome-text h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .welcome-text p {
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+  }
+  
+  .welcome-text .btn {
+    margin-top: 1rem;
+  }
+
+  .welcome-visual-placeholder svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius-sm);
+  }
+
+  /* Services Grid Section */
+  .services-section {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .section-subtitle {
+    max-width: 600px;
+    margin: 0.5rem auto 3.5rem auto;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+  }
+
+  .view-all-box {
+    margin-top: 3.5rem;
+  }
+
+  /* Process steps */
+  .process-number {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .process-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .process-card p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* Mid CTAs */
+  .cta-cards-section {
+    padding: 3rem 0;
+  }
+
+  .cta-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5rem;
+    min-height: 250px;
+  }
+
+  .cta-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .cta-card .btn {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .highlight-cta {
+    border-color: rgba(234, 179, 8, 0.3);
+    box-shadow: 0 4px 25px rgba(234, 179, 8, 0.08);
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.25rem;
+  }
+
+  .testimonial-card .quote {
+    font-style: italic;
+    color: #ffffff;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .author-info .name {
+    font-weight: 700;
+    color: var(--color-accent);
+    font-size: 0.95rem;
+  }
+
+  .author-info .details {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  /* Final Call */
+  .final-call-section {
+    padding: 3rem 0 6rem 0;
+  }
+
+  .final-card {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #1e3a8a 0%, #0b0f19 100%);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .final-card h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .final-card p {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+  }
+
+  .call-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Responsiveness */
+  @media (max-width: 992px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+    .home-hero h1 {
+      font-size: 2.75rem;
+    }
+    .welcome-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .welcome-visual-placeholder {
+      max-width: 450px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero-ctas, .call-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    .hero-ctas .btn, .call-actions .btn {
+      width: 100%;
+    }
+    .final-card {
+      padding: 3rem 1.5rem;
+    }
+  }
+</style>

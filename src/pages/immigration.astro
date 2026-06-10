@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import servicesData from '../data/services.json';
+
+const skilledImmigration = servicesData.filter(s => 
+  s.slug === 'express-entry' || 
+  s.slug === 'provincial-nominee-program' || 
+  s.slug === 'skilled-immigration'
+);
+
+const businessImmigration = servicesData.filter(s => 
+  s.slug === 'business-immigration' || 
+  s.slug === 'self-employed-program'
+);
+
+const familyImmigration = servicesData.filter(s => 
+  s.slug === 'family-immigration' || 
+  s.slug === 'family-spousal-sponsorships'
+);
+
+const workPermits = servicesData.filter(s => 
+  s.slug === 'closed-work-permit-lmia' || 
+  s.slug === 'spousal-open-work-permit' || 
+  s.slug === 'post-graduate-work-permit' ||
+  s.slug === 'bridging-open-work-permit'
+);
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Immigration Class', item: '/immigration/' }
+];
+---
+
+<BaseLayout 
+  title="Canadian Immigration Classes" 
+  description="Explore the main immigration pathways to Canada: Skilled Worker, Business Investor, Family Sponsorship, and Work Permits."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="immigration-hero">
+    <div class="container text-center">
+      <h1 class="animate-fade-in">Canadian Immigration Classes</h1>
+      <p class="subtitle animate-fade-in">Discover which category best matches your background, goals, and family situation.</p>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="immigration-classes container section-padding">
+    
+    <!-- Skilled Worker -->
+    <div class="class-block">
+      <div class="class-header">
+        <h2>Skilled Worker & Professional Class</h2>
+        <p>Pathways tailored for individuals with education, professional work experience, and language skills who want to establish themselves economically in Canada.</p>
+      </div>
+      <div class="grid grid-3">
+        {skilledImmigration.map(service => (
+          <article class="class-card card">
+            <h3>{service.title}</h3>
+            <p>{service.shortDescription}</p>
+            <a href={`/services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Business & Investor -->
+    <div class="class-block">
+      <div class="class-header">
+        <h2>Business, Start-Up & Investor Class</h2>
+        <p>Designed for net-worth individuals, entrepreneurs, and athletes/artists who want to establish a business, buy an existing company, or settle self-employed.</p>
+      </div>
+      <div class="grid grid-2">
+        {businessImmigration.map(service => (
+          <article class="class-card card">
+            <h3>{service.title}</h3>
+            <p>{service.shortDescription}</p>
+            <a href={`/services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Family Class -->
+    <div class="class-block">
+      <div class="class-header">
+        <h2>Family Reunification Class</h2>
+        <p>Canada places high priority on keeping families together. If you have close relatives who are citizens or PRs, they may sponsor your permanent residency.</p>
+      </div>
+      <div class="grid grid-2">
+        {familyImmigration.map(service => (
+          <article class="class-card card">
+            <h3>{service.title}</h3>
+            <p>{service.shortDescription}</p>
+            <a href={`/services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Work Permits -->
+    <div class="class-block">
+      <div class="class-header">
+        <h2>Temporary Work Permit Class</h2>
+        <p>Secure work authorization to work temporarily for specific employers, gain Canadian experience, or transition from studies to full employment.</p>
+      </div>
+      <div class="grid grid-4">
+        {workPermits.map(service => (
+          <article class="class-card card">
+            <h3>{service.title}</h3>
+            <p>{service.shortDescription}</p>
+            <a href={`/services/${service.slug}/`} class="class-link">Explore Pathway &rarr;</a>
+          </article>
+        ))}
+      </div>
+    </div>
+
+  </section>
+</BaseLayout>
+
+<style>
+  .immigration-hero {
+    background: linear-gradient(135deg, #0b0f19 0%, #1e3a8a 100%);
+    padding: 6.5rem 0 4.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 1rem auto 0 auto;
+  }
+
+  .class-block {
+    margin-bottom: 5rem;
+  }
+
+  .class-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .class-header {
+    max-width: 800px;
+    margin-bottom: 2.5rem;
+  }
+
+  .class-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .class-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+  }
+
+  .class-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+  }
+
+  .class-card h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .class-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .class-link {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    margin-top: auto;
+  }
+
+  .class-link:hover {
+    color: var(--color-accent-hover);
+    padding-left: 4px;
+  }
+</style>

@@ -1,0 +1,346 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import FAQ from '../components/FAQ.astro';
+import servicesData from '../data/services.json';
+
+interface Props {
+  service: {
+    slug: string;
+    title: string;
+    category: string;
+    shortDescription: string;
+    intro: string;
+    whoThisIsFor: string[];
+    requirements: string[];
+    documents: string[];
+    howWeHelp: string[];
+    processTimeline: string[];
+    faqs?: { question: string; answer: string }[];
+  };
+}
+
+const { service } = Astro.props;
+
+// Filter related services in the same category (excluding current)
+const relatedServices = servicesData
+  .filter(s => s.category === service.category && s.slug !== service.slug)
+  .slice(0, 4);
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Services', item: '/services/' },
+  { name: service.title, item: `/services/${service.slug}/` }
+];
+
+// Build FAQ schema data for JSON-LD (if service has FAQs)
+const faqSchema = service.faqs && service.faqs.length > 0 ? service.faqs : undefined;
+---
+
+<BaseLayout 
+  title={service.title} 
+  description={service.shortDescription}
+  breadcrumbs={breadcrumbs}
+  faqSchema={faqSchema}
+>
+  <!-- Hero Section -->
+  <section class="service-hero">
+    <div class="container hero-container">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> &gt; <a href="/services/">Services</a> &gt; <span>{service.title}</span>
+      </div>
+      <span class="category-tag">{service.category}</span>
+      <h1 class="service-title">{service.title}</h1>
+      <p class="service-intro">{service.intro}</p>
+    </div>
+  </section>
+
+  <!-- Content & Sidebar -->
+  <section class="service-content-section container">
+    <div class="service-layout-grid">
+      <!-- Main Content -->
+      <article class="service-main-content">
+        <!-- Visual Placeholder Image -->
+        <div class="media-placeholder">
+          <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="placeholder-svg">
+            <rect width="800" height="400" fill="url(#hero-grad)" />
+            <text x="50%" y="45%" dominant-baseline="middle" text-anchor="middle" font-family="Outfit" font-size="28" font-weight="700" fill="#ffffff">{service.title}</text>
+            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="16" fill="#9ca3af">Visual Concept Placeholder</text>
+            <defs>
+              <linearGradient id="hero-grad" x1="0" y1="0" x2="800" y2="400" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1e3a8a" />
+                <stop offset="1" stop-color="#0f172a" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="content-block">
+          <h2>Who This Is For</h2>
+          <ul class="styled-list">
+            {service.whoThisIsFor.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2>Eligibility & Requirements</h2>
+          <ul class="styled-list">
+            {service.requirements.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2>Documents Commonly Needed</h2>
+          <ul class="styled-list check-list">
+            {service.documents.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2>How We Help</h2>
+          <ul class="styled-list star-list">
+            {service.howWeHelp.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+
+        <div class="content-block">
+          <h2>Process Timeline</h2>
+          <div class="timeline">
+            {service.processTimeline.map(step => (
+              <div class="timeline-step">
+                <p>{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- FAQ Accordion (only if service has FAQs) -->
+        {service.faqs && service.faqs.length > 0 && (
+          <div class="content-block faq-block">
+            <FAQ items={service.faqs} title={`${service.title} — Frequently Asked Questions`} />
+          </div>
+        )}
+
+        <div class="content-block disclaimer-box">
+          <p><strong>Disclaimer:</strong> Canadian immigration rules, quotas, and processing standards change frequently. The information provided above is for general guidance only and does not constitute formal legal or immigration advice. For personalized assessment, consult with a Regulated Canadian Immigration Consultant (RCIC).</p>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="service-sidebar">
+        <div class="sidebar-sticky">
+          <LeadForm 
+            formId="serviceSidebarForm"
+            title="Request Details"
+            subtitle="Let our licensed team evaluate your profile for this program."
+          />
+
+          {relatedServices.length > 0 && (
+            <div class="related-widget card">
+              <h3 class="widget-title">Related Pathways</h3>
+              <ul class="related-list">
+                {relatedServices.map(rel => (
+                  <li>
+                    <a href={`/services/${rel.slug}/`} class="related-link">
+                      <span>{rel.title}</span>
+                      <span class="arrow">&rarr;</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .service-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+    padding: 4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 3rem;
+  }
+
+  .category-tag {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-intro {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    line-height: 1.6;
+  }
+
+  .service-layout-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 6rem;
+  }
+
+  .media-placeholder {
+    margin-bottom: 2.5rem;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .placeholder-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .content-block {
+    margin-bottom: 3rem;
+  }
+
+  .content-block h2 {
+    margin-bottom: 1.25rem;
+  }
+
+  .styled-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .styled-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+  }
+
+  .styled-list li::before {
+    content: '▪';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-light);
+  }
+
+  .check-list li::before {
+    content: '✓';
+    color: var(--color-success);
+    font-weight: bold;
+  }
+
+  .star-list li::before {
+    content: '★';
+    color: var(--color-accent);
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 1.5rem;
+    margin-left: 0.5rem;
+  }
+
+  .timeline-step {
+    position: relative;
+  }
+
+  .timeline-step::before {
+    content: '';
+    position: absolute;
+    left: calc(-1.5rem - 6px);
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--bg-primary);
+  }
+
+  .faq-block {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+  }
+
+  .disclaimer-box {
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 4px solid var(--text-muted);
+    padding: 1.5rem;
+    border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+  }
+
+  .disclaimer-box p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  /* Sidebar widgets */
+  .sidebar-sticky {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .related-widget {
+    padding: 1.5rem;
+  }
+
+  .widget-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .related-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .related-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .related-link:hover {
+    color: #ffffff;
+  }
+
+  .related-link:hover .arrow {
+    transform: translateX(3px);
+  }
+
+  .arrow {
+    transition: transform 0.2s;
+  }
+
+  @media (max-width: 992px) {
+    .service-layout-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .service-title {
+      font-size: 2.25rem;
+    }
+  }
+</style>

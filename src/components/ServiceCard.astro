@@ -1,0 +1,85 @@
+---
+interface Props {
+  title: string;
+  shortDescription: string;
+  category: string;
+  slug: string;
+}
+
+const { title, shortDescription, category, slug } = Astro.props;
+---
+
+<article class="service-card card">
+  <div class="card-content">
+    <div class="card-meta">
+      <span class="category-badge">{category}</span>
+    </div>
+    <h3 class="card-title">{title}</h3>
+    <p class="card-desc">{shortDescription}</p>
+  </div>
+  <a href={`/services/${slug}/`} class="card-link" aria-label={`Learn more about ${title}`}>
+    Learn More <span class="arrow-right" aria-hidden="true">&rarr;</span>
+  </a>
+</article>
+
+<style>
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .card-meta {
+    margin-bottom: 1rem;
+  }
+
+  .category-badge {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--color-primary-light);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.55;
+  }
+
+  .card-link {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: auto;
+  }
+
+  .card-link:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .arrow-right {
+    transition: transform 0.2s;
+  }
+
+  .card-link:hover .arrow-right {
+    transform: translateX(4px);
+  }
+</style>

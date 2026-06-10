@@ -1,0 +1,111 @@
+---
+import { siteConfig } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  faqSchema?: { question: string; answer: string }[];
+  breadcrumbs?: { name: string; item: string }[];
+}
+
+const {
+  title,
+  description = siteConfig.defaultDescription,
+  canonicalUrl,
+  ogImage = '/assets/og-image.jpg',
+  ogType = 'website',
+  faqSchema,
+  breadcrumbs
+} = Astro.props;
+
+const siteName = siteConfig.name;
+const fullTitle = title ? `${title} | ${siteName}` : `${siteName} | ${siteConfig.tagline}`;
+const finalCanonical = canonicalUrl || `${siteConfig.siteUrl}${Astro.url.pathname}`;
+
+// Base Organization/LocalBusiness Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "@id": `${siteConfig.siteUrl}/#organization`,
+  "name": siteConfig.name,
+  "url": siteConfig.siteUrl,
+  "logo": `${siteConfig.siteUrl}/assets/logo.svg`,
+  "image": `${siteConfig.siteUrl}/assets/og-image.jpg`,
+  "description": siteConfig.defaultDescription,
+  "telephone": siteConfig.phone,
+  "email": siteConfig.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "50 Dunlop Street E, Suit # 220E",
+    "addressLocality": "Barrie",
+    "addressRegion": "ON",
+    "postalCode": "L4M 6J9",
+    "addressCountry": "CA"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  }
+};
+
+// Breadcrumb Schema
+const breadcrumbListSchema = breadcrumbs ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((crumb, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": crumb.name,
+    "item": crumb.item.startsWith('http') ? crumb.item : `${siteConfig.siteUrl}${crumb.item}`
+  }))
+} : null;
+
+// FAQ Page Schema
+const faqPageSchema = faqSchema ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqSchema.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+} : null;
+---
+
+<!-- Canonical & Title -->
+<link rel="canonical" href={finalCanonical} />
+<title>{fullTitle}</title>
+
+<!-- Standard Metas -->
+<meta name="description" content={description} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="index, follow" />
+<meta charset="utf-8" />
+<link rel="icon" type="image/png" href="/assets/bbcimmigration_logo.png" />
+
+<!-- OpenGraph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={finalCanonical} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:image" content={ogImage.startsWith('http') ? ogImage : `${siteConfig.siteUrl}${ogImage}`} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage.startsWith('http') ? ogImage : `${siteConfig.siteUrl}${ogImage}`} />
+
+<!-- Schema JSON-LD -->
+<script type="application/ld+json" is:raw set:html={JSON.stringify(organizationSchema)} />
+{breadcrumbListSchema && <script type="application/ld+json" is:raw set:html={JSON.stringify(breadcrumbListSchema)} />}
+{faqPageSchema && <script type="application/ld+json" is:raw set:html={JSON.stringify(faqPageSchema)} />}

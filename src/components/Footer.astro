@@ -1,0 +1,213 @@
+---
+import { siteConfig } from '../data/site';
+import servicesData from '../data/services.json';
+
+// Get a few popular services for the footer column
+const popularServices = servicesData.slice(0, 5);
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <!-- Brand Info -->
+    <div class="footer-col brand-col">
+      <img src="/assets/bbcimmigration_logo.png" alt="Busy Bee Canada Logo" class="logo-image" style="height: 45px; width: auto; object-fit: contain; margin-bottom: 0.5rem;" />
+      <p class="brand-text">
+        Busy Bee Canada Immigration is an ICCRC licensed immigration firm in Barrie, Ontario. Each case for us has been a personal journey. Our motto is “Let’s get it done” & we approach each case with individual nuance and a human touch.
+      </p>
+      
+      <div class="licence-cert-container" style="margin-top: 0.5rem;">
+        <img src="/assets/Footer licence.jpg" alt="ICCRC / CICC Licensed Consultant Certification" class="licence-image" style="max-height: 80px; width: auto; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); display: block;" />
+      </div>
+
+      <div class="social-icons">
+        <a href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+          📘 Facebook
+        </a>
+        <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+          📸 Instagram
+        </a>
+      </div>
+    </div>
+
+    <!-- Services Links -->
+    <div class="footer-col">
+      <h3 class="footer-heading">Services</h3>
+      <ul class="footer-links">
+        {popularServices.map(service => (
+          <li>
+            <a href={`/services/${service.slug}/`}>{service.title}</a>
+          </li>
+        ))}
+        <li><a href="/services/">All Services Hub &rarr;</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h3 class="footer-heading">Contact Us</h3>
+      <address class="footer-address">
+        <p>📍 {siteConfig.address}</p>
+        <p>📞 Phone: <a href={`tel:${siteConfig.phone}`}>{siteConfig.phone}</a></p>
+        <p>☎️ Toll-Free: <a href={`tel:${siteConfig.tollFree}`}>{siteConfig.tollFree}</a></p>
+        <p>✉️ Email: <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></p>
+        <p>🕒 Hours: {siteConfig.officeHours}</p>
+      </address>
+    </div>
+
+    <!-- Legal Pages Links -->
+    <div class="footer-col">
+      <h3 class="footer-heading">Legal Info</h3>
+      <ul class="footer-links">
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms-and-conditions/">Terms & Conditions</a></li>
+        <li><a href="/disclaimer/">Disclaimer</a></li>
+        <li><a href="/cookie-policy/">Cookie Policy</a></li>
+        <li><a href="/accessibility/">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="container bottom-container">
+      <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+      <p class="cicc-badge">
+        ⚠️ <strong>CICC Disclaimer:</strong> Our consultants are Regulated Canadian Immigration Consultants (RCICs) registered under the College of Immigration and Citizenship Consultants (CICC). Busy Bee Canada is an independent consultancy and is not affiliated with the Government of Canada or IRCC.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 5rem 0 2rem 0;
+    font-size: 0.9rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .brand-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .brand-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .social-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-primary-light);
+  }
+
+  .footer-heading {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-links a {
+    color: var(--text-secondary);
+  }
+
+  .footer-links a:hover {
+    color: #ffffff;
+    padding-left: 4px;
+  }
+
+  .footer-address {
+    font-style: normal;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-address a {
+    color: inherit;
+  }
+  
+  .footer-address a:hover {
+    color: #ffffff;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  .bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .cicc-badge {
+    max-width: 600px;
+    line-height: 1.4;
+    text-align: right;
+  }
+
+  /* Responsiveness */
+  @media (max-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .cicc-badge {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .bottom-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

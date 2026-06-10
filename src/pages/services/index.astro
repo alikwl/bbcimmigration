@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import servicesData from '../../data/services.json';
+
+const categories = ["Visa", "Immigration", "Work Permit", "Programs", "Additional"];
+
+// Group services by category
+const groupedServices = categories.reduce((acc, category) => {
+  acc[category] = servicesData.filter(s => s.category === category);
+  return acc;
+}, {} as Record<string, typeof servicesData>);
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Services', item: '/services/' }
+];
+---
+
+<BaseLayout 
+  title="Our Services" 
+  description="Explore our range of Canadian visa, permit, and permanent residency programs."
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero / Header -->
+  <section class="services-hub-hero">
+    <div class="container text-center">
+      <h1 class="animate-fade-in">Canadian Immigration Services</h1>
+      <p class="subtitle animate-fade-in">Explore our 19 comprehensive pathways categorized to help you find the right track to Canada.</p>
+    </div>
+  </section>
+
+  <!-- Quick Navigation Category Bar -->
+  <section class="services-nav-section container">
+    <div class="nav-wrapper card">
+      <div class="nav-label">Jump to Category:</div>
+      <div class="category-anchors">
+        {categories.map(cat => (
+          <a href={`#category-${cat.toLowerCase().replace(/\s+/g, '-')}`} class="anchor-link">
+            {cat}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Grouped Category Sections -->
+  <section class="services-grouped-sections container">
+    {categories.map(category => {
+      const services = groupedServices[category] || [];
+      return (
+        <div 
+          class="category-group-section" 
+          id={`category-${category.toLowerCase().replace(/\s+/g, '-')}`}
+        >
+          <div class="category-header">
+            <span class="category-badge">{category} Services</span>
+            <h2>{category} Pathways</h2>
+            <div class="header-line"></div>
+          </div>
+          
+          <div class="grid grid-3">
+            {services.map(service => (
+              <ServiceCard 
+                title={service.title} 
+                shortDescription={service.shortDescription} 
+                category={service.category} 
+                slug={service.slug} 
+              />
+            ))}
+          </div>
+        </div>
+      );
+    })}
+  </section>
+</BaseLayout>
+
+<style>
+  .services-hub-hero {
+    background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
+    padding: 5rem 0 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 1rem auto 0 auto;
+  }
+
+  .services-nav-section {
+    margin-top: -2rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 2rem;
+  }
+
+  .nav-label {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+  }
+
+  .category-anchors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .anchor-link {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    transition: var(--transition-fast);
+  }
+
+  .anchor-link:hover {
+    color: #ffffff;
+    background: var(--color-primary-light);
+    border-color: var(--color-primary-light);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+  }
+
+  .services-grouped-sections {
+    padding: 4rem 0 6rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .category-group-section {
+    scroll-margin-top: 100px;
+  }
+
+  .category-header {
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  .category-badge {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  .category-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .header-line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary-light);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .nav-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.25rem;
+    }
+    .category-anchors {
+      width: 100%;
+    }
+    .anchor-link {
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+</style>

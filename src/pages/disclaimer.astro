@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Disclaimer', item: '/disclaimer/' }
+];
+---
+
+<BaseLayout 
+  title="Legal Disclaimer" 
+  description="Important disclosures regarding government affiliations, consultant services, and information accuracy."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="legal-hero">
+    <div class="container text-center">
+      <h1>Legal Disclaimer</h1>
+      <p class="subtitle">Important Disclosures & Affiliations</p>
+    </div>
+  </section>
+
+  <section class="legal-content container section-padding">
+    <div class="legal-text-wrapper card">
+      <h2>1. Information Purposes Only</h2>
+      <p>The content provided on this website, including service pages, guidelines, assessment parameters, and blog/resource articles, is for general information purposes only. It does not constitute formal immigration, legal, or professional advice. You should not act or rely on any information on this site without seeking the advice of a Regulated Canadian Immigration Consultant (RCIC) or a licensed lawyer in Canada.</p>
+      
+      <h2>2. No Affiliation with the Government of Canada</h2>
+      <p><strong>{siteConfig.name}</strong> is a private, independent immigration consultancy. We are <strong>not</strong> associated, affiliated, endorsed, or approved by Immigration, Refugees and Citizenship Canada (IRCC), the Government of Canada, or any provincial Canadian government agency. Any official application resources or government guidelines are obtained from publicly accessible channels (such as canada.ca).</p>
+
+      <h2>3. No Guarantee of Application Success</h2>
+      <p>Under Canadian law and professional codes of conduct, Regulated Canadian Immigration Consultants (RCICs) are strictly prohibited from promising or guaranteeing the outcome of any visa, permit, or permanent residency application. The final authority to grant, refuse, or delay any visa or status resides solely with the immigration officers of IRCC or the Canada Border Services Agency (CBSA).</p>
+
+      <h2>4. Dynamic Regulatory Environment</h2>
+      <p>Canadian immigration laws, operational bulletins, quotas, and processing timelines change frequently and without notice. While we endeavor to keep the website information accurate and up to date, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or availability of the information contained on this website.</p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-hero {
+    background: linear-gradient(135deg, #0b0f19 0%, #1f2937 100%);
+    padding: 4rem 0 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .subtitle {
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+  }
+
+  .legal-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .legal-text-wrapper {
+    padding: 3rem;
+  }
+
+  .legal-text-wrapper h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.5rem;
+  }
+
+  .legal-text-wrapper h2:first-of-type {
+    margin-top: 0;
+  }
+
+  .legal-text-wrapper p {
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+</style>

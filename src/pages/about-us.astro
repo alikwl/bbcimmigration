@@ -1,0 +1,352 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import teamData from '../data/team.json';
+import { siteConfig } from '../data/site';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'About Us', item: '/about-us/' }
+];
+---
+
+<BaseLayout 
+  title="About Us" 
+  description="Learn about Busy Bee Canada, our licensed consultants, our director Harsimran Kaur, and our mission to support your journey to Canada."
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero -->
+  <section class="about-hero">
+    <div class="container text-center">
+      <h1 class="animate-fade-in">About Busy Bee Canada</h1>
+      <p class="subtitle animate-fade-in">“Let’s get it done” — Approach with individual nuance and a human touch.</p>
+    </div>
+  </section>
+
+  <!-- Company Intro & Stats -->
+  <section class="about-intro container section-padding">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <h2>Welcome to Busy Bee Canada!</h2>
+        <p>
+          Busy Bee Canada Immigration is an ICCRC licensed immigration firm in Ontario, Canada. Each case for us has been a personal journey. 
+        </p>
+        <p>
+          Our motto is <strong>“Let’s get it done”</strong> & with a philosophy as simple, we approach each case within its individual nuance and a human touch.
+        </p>
+      </div>
+      <div class="stats-card card glass">
+        <div class="stat-item">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Cases Completed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Skill Assessments</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">40%</span>
+          <span class="stat-label">Satisfied Customers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Director Section -->
+  <section class="director-section">
+    <div class="container director-grid">
+      <div class="director-image-placeholder">
+        <svg viewBox="0 0 400 450" fill="none" xmlns="http://www.w3.org/2000/svg" class="placeholder-svg">
+          <rect width="400" height="450" fill="url(#dir-grad)" />
+          <path d="M200 150 C 240 150, 270 180, 270 220 C 270 260, 240 290, 200 290 C 160 290, 130 260, 130 220 C 130 180, 160 150, 200 150 Z" fill="#ffffff" opacity="0.1" />
+          <path d="M100 380 C 100 320, 150 300, 200 300 C 250 300, 300 320, 300 380 L 300 420 L 100 420 Z" fill="#ffffff" opacity="0.1" />
+          <text x="50%" y="85%" dominant-baseline="middle" text-anchor="middle" font-family="Outfit" font-size="20" font-weight="700" fill="#ffffff">Harsimran Kaur</text>
+          <text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Plus Jakarta Sans" font-size="12" fill="#eab308">ICCRC/CICC Director</text>
+          <defs>
+            <linearGradient id="dir-grad" x1="0" y1="0" x2="400" y2="450" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#1e40af" />
+              <stop offset="1" stop-color="#0b0f19" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="director-text">
+        <span class="quote-icon">“</span>
+        <h2>Our Director</h2>
+        <p class="director-quote">
+          “I moved to Canada a decade ago and It has been the best decision of my life. Canada is a beautiful country and offers immense warmth towards its immigrant population. Still the immigration process in itself can be extremely daunting as I personally faced during my struggle to find a reliable consultant/lawyer. 
+        </p>
+        <p class="director-quote">
+          It is then that I decided to work towards earning a government authorized consulting license so that I could provide future immigration seekers a reliable legal aid & assistance. I am invested in my clients personal journey & aspirations, to help guide & nurture a relationship that is beyond paper work.
+        </p>
+        <p class="director-quote">
+          I, along with my team of dedicated professionals at BBC will assist you in your quest towards making Canada your home. If you are an entrepreneur, investor, student or an individual seeking temporary or permanent residency in Canada, we provide a range of services ensuring a hassle free experience. Welcome to our BBC family!”
+        </p>
+        <p class="director-name"><strong>Harsimran Kaur</strong>, Founder & CICC Licensed Consultant</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Grid -->
+  <section class="team-section container section-padding">
+    <h2 class="text-center">Our Team</h2>
+    <p class="section-subtitle text-center">Every client file is overseen by regulated and credentialed experts.</p>
+
+    <div class="grid grid-3 team-grid">
+      {teamData.map(member => (
+        <div class="team-card card text-center">
+          <div class="team-avatar-container">
+            {member.image ? (
+              <img 
+                src={encodeURI(member.image)} 
+                alt={member.name} 
+                class="team-avatar-img" 
+                loading="lazy"
+              />
+            ) : (
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="100" fill="url(#avatar-grad)" />
+                <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Outfit" font-size="48" font-weight="700" fill="#ffffff">
+                  {member.name.split(' ').map(n => n[0]).join('')}
+                </text>
+                <defs>
+                  <linearGradient id="avatar-grad" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3b82f6" />
+                    <stop offset="1" stop-color="#1e3a8a" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            )}
+          </div>
+          <h3>{member.name}</h3>
+          <span class="member-role">{member.role}</span>
+          <span class="member-cred">{member.credential}</span>
+          <p class="member-bio">{member.bio}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="about-cta-section container text-center">
+    <div class="cta-inner card glass">
+      <h2>Ready to Start Your Journey?</h2>
+      <p>Have our credentialed team analyze your background and plan your migration path.</p>
+      <div class="cta-buttons">
+        <a href="/book-consultation/" class="btn btn-accent">Book Paid Consultation</a>
+        <a href="/contact-us/" class="btn btn-outline">Send a Message</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
+    padding: 5rem 0 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 1rem auto 0 auto;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .intro-text h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-text p {
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+  }
+
+  .stats-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 2.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  /* Director Section */
+  .director-section {
+    background-color: var(--bg-secondary);
+    padding: 6rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .director-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .director-image-placeholder {
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .director-text {
+    position: relative;
+  }
+
+  .quote-icon {
+    font-family: var(--font-heading);
+    font-size: 8rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.03);
+    position: absolute;
+    top: -4rem;
+    left: -2rem;
+  }
+
+  .director-text h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .director-quote {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .director-name {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+
+  /* Team section */
+  .section-subtitle {
+    max-width: 600px;
+    margin: 0.5rem auto 3rem auto;
+    color: var(--text-secondary);
+  }
+
+  .team-grid {
+    margin-top: 2rem;
+  }
+
+  .team-avatar-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .team-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .member-role {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--color-primary-light);
+    font-weight: 600;
+  }
+
+  .member-cred {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .member-bio {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* Final CTA */
+  .about-cta-section {
+    padding: 2rem 0 6rem 0;
+  }
+
+  .cta-inner {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .cta-inner p {
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  @media (max-width: 992px) {
+    .intro-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .director-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .director-image-placeholder {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .cta-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+    .cta-buttons .btn {
+      width: 100%;
+    }
+  }
+</style>

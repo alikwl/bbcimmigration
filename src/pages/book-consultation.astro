@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/site';
+
+const breadcrumbs = [
+  { name: 'Home', item: '/' },
+  { name: 'Book Consultation', item: '/book-consultation/' }
+];
+---
+
+<BaseLayout 
+  title="Book a Consultation" 
+  description="Schedule a paid consulting session with our Regulated Canadian Immigration Consultants (RCICs) to analyze your application paths."
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero -->
+  <section class="booking-hero">
+    <div class="container text-center">
+      <h1 class="animate-fade-in">Book a Professional Consultation</h1>
+      <p class="subtitle animate-fade-in">Schedule a dedicated, one-on-one session with our licensed immigration specialists.</p>
+    </div>
+  </section>
+
+  <!-- Options and Widget Grid -->
+  <section class="booking-section container section-padding">
+    <div class="booking-grid">
+      <!-- Info Column -->
+      <div class="booking-info">
+        <h2>Consultation Packages</h2>
+        <p class="intro-p">To offer legally compliant, detailed, and strategic advice, we provide paid consultation sessions. The consultation fee is fully credited toward your retainer if you hire us to manage your case.</p>
+        
+        <div class="packages-list">
+          <div class="package-card card active-package">
+            <div class="pack-meta">
+              <span class="price">$150 CAD</span>
+              <span class="duration">30 Minutes</span>
+            </div>
+            <h3>General Assessment & Options</h3>
+            <p>Perfect for candidates looking to verify their CRS scores, check general eligibility for study/work programs, or determine the best immigration streams.</p>
+            <ul class="pack-features">
+              <li>Comprehensive profile audit</li>
+              <li>Review of 3 potential pathways</li>
+              <li>Q&A session with an RCIC</li>
+            </ul>
+          </div>
+
+          <div class="package-card card">
+            <div class="pack-meta">
+              <span class="price">$250 CAD</span>
+              <span class="duration">60 Minutes</span>
+            </div>
+            <h3>Detailed Strategy & Document Review</h3>
+            <p>Recommended for complex family sponsorship files, provincial nominee streams, business/investor routes, or reviewing refusal letters.</p>
+            <ul class="pack-features">
+              <li>Comprehensive document audits</li>
+              <li>Detailed study of refusal notes (GCMS)</li>
+              <li>Customized legal advice session</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Widget -->
+      <div class="booking-widget-panel">
+        <div class="widget-card card glass">
+          <h2>Select Session Mode</h2>
+          <p class="widget-desc">Choose your preferred consultation option to view available slots.</p>
+          
+          <div class="mode-select-buttons">
+            <button class="mode-btn active" id="modeZoom">💻 Video Call (Zoom/Meet)</button>
+            <button class="mode-btn" id="modeOffice">🏢 In-Person (Barrie Office)</button>
+          </div>
+
+          <div class="booking-cta-block">
+            <div class="cta-inner-info">
+              <p>📅 <strong>Online Scheduler:</strong></p>
+              <p>We use Calendly to synchronize with our active consultant calendars. You can choose a convenient date/time, provide your information, and complete the booking securely.</p>
+            </div>
+            
+            <a 
+              href={siteConfig.calendlyUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn btn-accent btn-large btn-booking"
+              id="bookingLink"
+            >
+              Open Online Appointment Book &rarr;
+            </a>
+            
+            <p class="alternative-text">
+              Prefer a callback? <a href="/contact-us/">Request a general evaluation call</a> and our intake team will phone you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .booking-hero {
+    background: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
+    padding: 5rem 0 3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 1rem auto 0 auto;
+  }
+
+  .booking-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4.5rem;
+  }
+
+  .booking-info h2 {
+    margin-bottom: 1rem;
+  }
+
+  .intro-p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .packages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .package-card {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--bg-secondary);
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
+  }
+
+  .package-card.active-package {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+  }
+
+  .pack-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .price {
+    font-size: 1.6rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--color-accent);
+  }
+
+  .duration {
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .package-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .package-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .pack-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  .pack-features li::before {
+    content: '✓ ';
+    color: var(--color-success);
+    font-weight: bold;
+    margin-right: 0.25rem;
+  }
+
+  /* Widget Panel */
+  .widget-card {
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .widget-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .mode-select-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .mode-btn {
+    padding: 1rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition-fast);
+  }
+
+  .mode-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #ffffff;
+  }
+
+  .mode-btn.active {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--color-primary-light);
+    color: var(--color-primary-light);
+  }
+
+  .booking-cta-block {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 2rem;
+  }
+
+  .cta-inner-info {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .btn-booking {
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 1rem;
+  }
+
+  .alternative-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .alternative-text a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 992px) {
+    .booking-grid {
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+  }
+</style>
+
+<script>
+  // Simple interactive mode switching mockup
+  const btnZoom = document.getElementById('modeZoom');
+  const btnOffice = document.getElementById('modeOffice');
+  const bookingLink = document.getElementById('bookingLink') as HTMLAnchorElement | null;
+
+  if (btnZoom && btnOffice) {
+    btnZoom.addEventListener('click', () => {
+      btnZoom.classList.add('active');
+      btnOffice.classList.remove('active');
+      if (bookingLink) {
+        bookingLink.innerText = 'Open Online Appointment Book 💻';
+      }
+    });
+
+    btnOffice.addEventListener('click', () => {
+      btnOffice.classList.add('active');
+      btnZoom.classList.remove('active');
+      if (bookingLink) {
+        bookingLink.innerText = 'Request In-Office Appointment 🏢';
+      }
+    });
+  }
+</script>
